@@ -225,6 +225,22 @@
     }
 }
 
+// Emotes
+
+.md [href^="#"] {
+	position: relative;
+	top: 4px;
+    background: url(%%emotes%%);
+    background-size: 100%;
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    margin-right: .3em;
+    pointer-events: none;
+}
+
+.md [href="#rip"] { background-position: 0 0; }
+
 // Other Flairs
 
 a.author[href$="/raczilla"], a.author[href$="/S-LG"], a.author[href$="/JustMooney1"], a.author[href$="/Chris_Attalus"], a.author[href$="/iFlak"], a.author[href$="/inuswetrust1"], a.author[href$="/hofftv"], a.author[href$="/ZooKeeperZak"], a.author[href$="/ConstantDesigner"], a.author[href$="/EpicTense"], a.author[href$="/EpicEricSW"], a.author[href$="/EPIC_Tokaj"], a.author[href$="/InUsWeTrust1"], a.author[href$="/arctyczyn"], a.author[href$="/MichaelNoland"], a.author[href$="/MrPopoTFS"], a.author[href$="/AfroDeezyShak"], a.author[href$="/Epic_Joel"], a.author[href$="/DanDaDaDanDan"], a.author[href$="/spazinski"], a.author[href$="/EpicPente"], a.author[href$="/RZELive"], a.author[href$="/darkveil"], a.author[href$="/sweedinmusic"], a.author[href$="/MythicBasil"], a.author[href$="/EpicCodyB"], a.author[href$="/AaronAtEpic"], a.author[href$="/Shank_TheTank"], a.author[href$="/EpicLoomin"], a.author[href$="/kyle-dev-epic"], a.author[href$="/EpicCodyB"], a.author[href$="/ModernRyoga"], a.author[href$="/SkribblrPrsn"] {
