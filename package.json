@@ -1,22 +1,17 @@
 {
   "name": "fortnitebr",
-  "version": "2.4.2",
-  "description": "/r/FortniteBR",
+  "version": "2.5.2",
+  "private": true,
+  "description": "/r/FortniteBR CSS",
   "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-csso": "^1.1.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-concat-css": "^2.3.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-csso": "^1.1.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-concat-css": "^2.3.0"
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-csso": "*",
+    "gulp-sass": "*",
+    "gulp-concat-css": "*"
   },
-  "author": " maintained by u/JejuneKai & u/MCiLuZiioNz",
+  "author": " maintained by /u/MCiLuZiioNz",
   "license": "ISC"
 }
