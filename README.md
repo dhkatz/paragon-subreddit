@@ -1,5 +1,5 @@
 # /r/ForniteBR Subreddit Stylesheet
-/r/FortniteBR Subreddit CSS - Managed by /u/MCiLuZiioNz
+/r/FortniteBR Subreddit CSS - Managed by /u/MCiLuZiioNz and /u/MasterGoat
 
 # Forking the Repository
 
