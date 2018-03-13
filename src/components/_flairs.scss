@@ -1,7 +1,7 @@
 // Link Flairs
 
 .thumbnail.self {
-  background-image: url(&quot;%%flair-icons%%&quot;);
+  background-image: url(%%flair-icons%%);
   background-position: 0px 0px;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@
 }
 
 .linkflair-official {
-  background: white url(&quot;%%epic-linkflair%%&quot;) center right no-repeat !important;
+  background: white url(%%epic-linkflair%%) center right no-repeat !important;
   .linkflairlabel {
     background: black;
   }
