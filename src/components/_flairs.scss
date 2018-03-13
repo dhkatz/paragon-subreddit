@@ -1,228 +1,181 @@
 // Link Flairs
 
 .thumbnail.self {
-    background-image: url(%%flair-icons%%);
-    background-position: 0px 0px;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    height: 50px;
+  background-image: url(%%flair-icons%%);
+  background-position: 0px 0px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  height: 50px;
 }
 
-.linkflair-epic-answered .linkflairlabel, .linkflairlabel {
-    padding: 4px 4px 3px;
-    font-size: 9px;
-    font-weight: normal;
-    text-transform: uppercase;
-    color: white;
-    background: $purple;
-    border: none;
-    border-radius: 0;
-    position: relative;
-    top: 2px;
-    letter-spacing: 1px;
+.linkflair-epic- answered .linkflairlabel, .linkflairlabel {
+  padding: 4px 4px 3px;
+  font-size: 9px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: white;
+  background: #761fa1;
+  border: none;
+  border-radius: 0;
+  position: relative;
+  top: 2px;
+  letter-spacing: 1px;
+}
 
-    &:hover {
-        background: lighten($purple, 10%);
-    }
+.linkflair-epic- answered .linkflairlabel:hover, .linkflairlabel:hover {
+  background: #9527cc;
 }
 
 .linkflair-official {
-    background: white url(%%epic-linkflair%%) center right no-repeat !important;
-
-    .linkflairlabel {
-        background: black;
-    }
-
-    .thumbnail {
-        background-position: 0px -100px;
-    }
-
-    &:before {
-        color: black;
-        opacity: 1.0 !important;
-    }
+  background: white url(%%epic-linkflair%%) center right no-repeat !important;
+  .linkflairlabel {
+    background: black;
+  }
+  .thumbnail {
+    background-position: 0px -100px;
+  }
+  &:before {
+    color: black;
+    opacity: 1.0 !important;
+  }
 }
 
 .linkflair-announcement {
-    .linkflairlabel {
-        background: $purple;
-
-        &:hover {
-            background: lighten($purple, 30%);
-        }
+  .linkflairlabel {
+    background: #761fa1;
+    &:hover {
+      background: #bf75e4;
     }
-
-    &:before {
-        color: $purple;
-        opacity: 1.0 !important;
-    }
+  }
+  &:before {
+    color: #761fa1;
+    opacity: 1.0 !important;
+  }
 }
 
-.linkflair-epic-answered {
-    .linkflairlabel {
-        background: black;
-
-        &:hover {
-            background: lighten(black, 30%);
-        }
+.linkflair-epic- answered {
+  .linkflairlabel {
+    background: black;
+    &:hover {
+      background: #4d4d4d;
     }
-
-    &:before {
-        color: black;
-        opacity: 1.0 !important;
-    }
+  }
+  &:before {
+    color: black;
+    opacity: 1.0 !important;
+  }
 }
 
 .linkflair-discussion {
-    .linkflairlabel {
-        background: $purple;
-
-        &:hover {
-            background: lighten($purple, 30%);
-        }
+  .linkflairlabel {
+    background: #761fa1;
+    &:hover {
+      background: #bf75e4;
     }
-
-    .thumbnail {
-        background-position: 0px -50px;
-    }
-
-    &:before {
-        color: $purple;
-        opacity: 1.0 !important;
-    }
-}
-
-.linkflair-question {
-    .linkflairlabel {
-        background: $purple;
-
-        &:hover {
-            background: lighten($purple, 30%);
-        }
-    }
-
-    .thumbnail {
-        background-position: 0px -150px;
-    }
-
-    &:before {
-        color: $purple;
-        opacity: 1.0 !important;
-    }
+  }
+  .thumbnail {
+    background-position: 0px -50px;
+  }
+  &:before {
+    color: #761fa1;
+    opacity: 1.0 !important;
+  }
 }
 
 .linkflair-bug {
-    .linkflairlabel {
-        background: $purple;
-
-        &:hover {
-            background: lighten($purple, 30%);
-        }
+  .linkflairlabel {
+    background: #761fa1;
+    &:hover {
+      background: #bf75e4;
     }
-
-    .thumbnail {
-        background-position: 0px -200px;
-    }
-
-    &:before {
-        color: $purple;
-        opacity: 1.0 !important;
-    }
+  }
+  .thumbnail {
+    background-position: 0px -200px;
+  }
+  &:before {
+    color: #761fa1;
+    opacity: 1.0 !important;
+  }
 }
 
 .linkflair-help {
-    .linkflairlabel {
-        background: $purple;
-
-        &:hover {
-            background: lighten($purple, 30%);
-        }
+  .linkflairlabel {
+    background: #761fa1;
+    &:hover {
+      background: #bf75e4;
     }
-
-    .thumbnail {
-        background-position: 0px -300px;
-    }
-
-    &:before {
-        color: $purple;
-        opacity: 1.0 !important;
-    }
+  }
+  .thumbnail {
+    background-position: 0px -153px;
+  }
+  &:before {
+    color: #761fa1;
+    opacity: 1.0 !important;
+  }
 }
 
-.linkflair-media {
-    .linkflairlabel {
-        background: $purple;
-
-        &:hover {
-            background: lighten($purple, 30%);
-        }
+.linkflair-highlight, .linkflair-streamer {
+  .linkflairlabel {
+    background: #761fa1;
+    &:hover {
+      background: #bf75e4;
     }
-
-    .thumbnail {
-        background-position: 0px -250px;
-    }
-
-    &:before {
-        color: $purple;
-        opacity: 1.0 !important;
-    }
+  }
+  .thumbnail {
+    background-position: 0px -250px;
+  }
+  &:before {
+    color: #761fa1;
+    opacity: 1.0 !important;
+  }
 }
 
 .linkflair-creative {
-    .linkflairlabel {
-        background: $purple;
-
-        &:hover {
-            background: lighten($purple, 30%);
-        }
+  .linkflairlabel {
+    background: #761fa1;
+    &:hover {
+      background: #bf75e4;
     }
-
-    .thumbnail {
-        background-position: 0px -350px;
-    }
-
-    &:before {
-        color: $purple;
-        opacity: 1.0 !important;
-    }
+  }
+  .thumbnail {
+    background-position: 0px -350px;
+  }
+  &:before {
+    color: #761fa1;
+    opacity: 1.0 !important;
+  }
 }
 
 .linkflair-suggestion {
-    .linkflairlabel {
-        background: $purple;
-
-        &:hover {
-            background: lighten($purple, 30%);
-        }
+  .linkflairlabel {
+    background: #761fa1;
+    &:hover {
+      background: #bf75e4;
     }
-
-    .thumbnail {
-        background-position: 0px -400px;
-    }
-
-    &:before {
-        color: $purple;
-        opacity: 1.0 !important;
-    }
+  }
+  .thumbnail {
+    background-position: 0px -400px;
+  }
+  &:before {
+    color: #761fa1;
+    opacity: 1.0 !important;
+  }
 }
 
-.linkflair-fluff {
-    .linkflairlabel {
-        background: $purple;
-
-        &:hover {
-            background: lighten($purple, 30%);
-        }
+.linkflair-meme {
+  .linkflairlabel {
+    background: #761fa1;
+    &:hover {
+      background: #bf75e4;
     }
-
-    .thumbnail {
-        background-position: 0px -450px;
-    }
-
-    &:before {
-        color: $purple;
-        opacity: 1.0 !important;
-    }
+  }
+  .thumbnail {
+    background-position: 0px -500px;
+  }
+  &:before {
+    color: #761fa1;
+    opacity: 1.0 !important;
+  }
 }
 
 // Emotes
