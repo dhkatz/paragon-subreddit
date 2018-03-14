@@ -37,7 +37,7 @@
     background-position: 0 -250px;
   }
   &:nth-child(15) a {
-    background-position: 0 -320px;
+    background-position: 0 -357px;
   }
   &:nth-child(16) a {
     background-position: 0 -72px;
@@ -45,7 +45,27 @@
 }
 
 html {
-  &:lang(fn-00) .link:not(.linkflair-epic), &:lang(fn-01) .link:not(.linkflair-bug), &:lang(fn-02) .link:not(.linkflair-discussion):not(.linkflair-suggestion), &:lang(fn-03) .link:not(.linkflair-help), &:lang(fn-04) .link:not(.linkflair-highlight):not(.linkflair-streamer), &:lang(fn-05) .link:not(.linkflair-creative), &:lang(fn-06) .link:not(.linkflair-meme) {
+  &:lang(fn-00) .link:not(.linkflair-epic), &:lang(fn-01) .link:not(.linkflair-bug), &:lang(fn-02) .link:not(.linkflair-discussion):not(.linkflair-suggestion), &:lang(fn-03) .link:not(.linkflair-help), &:lang(fn-04) .link:not(.linkflair-media):not(.linkflair-streamer), &:lang(fn-05) .link:not(.linkflair-creative), &:lang(fn-06) .link:not(.linkflair-humor) {
     display: none;
   }
+  &:lang(fn) .side .md p:nth-child(37) {
+    display: block !important;
+    a {
+      content: "";
+      z-index: 100;
+      position: absolute;
+      top: 278px;
+      left: 130px;
+      background: url(%%logo%%) no-repeat left center;
+      width: 175px;
+      height: 106px;
+      background-size: 90%;
+      text-indent: -1999px;
+      overflow: hidden;
+    }
+  }
+}
+
+.side .md p:nth-child(37) {
+  display: none;
 }
