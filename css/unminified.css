@@ -1362,6 +1362,77 @@ button a:hover {
   width: 100%;
 }
 
+/* --- Reddit Enhancement Suite Fixes --- */
+
+/* Nightmode */
+
+/*Arrows*/
+
+.res-nightmode .arrow {
+  width: 20px;
+  height: 20px;
+  margin: 4px 0;
+  background-image: url("%%spritesheet%%") !important;
+}
+
+.res-nightmode .arrow.up {
+  background-position: 0 0;
+}
+
+.res-nightmode .arrow.down {
+  background-position: 0 -20px;
+}
+
+.res-nightmode .arrow.upmod {
+  background-position: -20px 0;
+}
+
+.res-nightmode .arrow.downmod {
+  background-position: -20px -20px;
+}
+
+/*LinkFlair Icons*/
+
+/* Defaults */
+
+/* Custom Nightmode Colors */
+
+/* Background Color */
+
+/* Transparent */
+
+.res-nightmode .side,
+.res-nightmode .tabmenu li a,
+.res-nightmode .side .usertext-body .md ol,
+.res-nightmode .side .usertext-body .md ol ol,
+.res-nightmode .side .usertext-body .md ol ol li,
+.res-nightmode .side .md ul,
+.res-nightmode #header-bottom-right,
+.res-nightmode .flair,
+.res-nightmode .linkflairlabel,
+.res-nightmode .side .sidecontentbox .content,
+.res-nightmode .icon-menu a,
+.res-nightmode #userbarToggle,
+.res-nightmode #progressIndicator,
+.res-nightmode body .content,
+.res-nightmode .voteWeight {
+  background-color: transparent !important;
+}
+
+/* Naut Blue Color #0079d3 */
+
+.res-nightmode #header #header-bottom-left {
+  background: #e0e0e0;
+}
+
+.res-nightmode #header #header-bottom-left:before {
+  background: url("%%emblem-black%%") no-repeat;
+}
+
+.res-nightmode #header .pagename a {
+  background: url("%%logo-black%%") no-repeat left center;
+}
+
 body {
   background: #f6f6f6;
   color: #333333;
