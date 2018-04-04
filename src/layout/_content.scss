@@ -244,48 +244,42 @@
 }
 
 body {
-    &.hot-page {
-        .thing.stickied {
-            margin-bottom: 20px;
-
-            a.title, a.title:visited, .flat-list.buttons li.first a {
-                color: $purple;
-            }
-
-            .entry .buttons li a {
-                color: $purple;
-            }
-
-            .stickied-tagline {
-                color: #999;
-            }
-
-            &.odd {
-                border-top: 2px solid rgba(0, 0, 0, 0.1);
-            }
-
-            & + :not(.stickied) + :not(.stickied) {
-                //border-top: 2.5px solid rgba(0, 0, 0, 0.08);
-                box-shadow: 0 -1px 12px -3px rgba(0, 0, 0, 0.2);
-            }
-
-            &.linkflair::before {
-                color: $purple;
-                opacity: 1;
-            }
+  &.hot-page {
+    .thing.stickied {
+      margin-bottom: 20px;
+      a.title {
+        color: #761fa1;
+        &:visited {
+          color: #761fa1;
         }
-
-        .stickied + .stickied, .stickied + div + .stickied {
-            margin-top: -20px;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-        }
+      }
+      .flat-list.buttons li.first a, .entry .buttons li a {
+        color: #761fa1;
+      }
+      .stickied-tagline {
+        color: #999;
+      }
+      &.odd {
+        border-top: 2px solid rgba(0, 0, 0, 0.1);
+      }
+      + :not(.stickied) + :not(.stickied) {
+        box-shadow: 0 -1px 12px -3px rgba(0, 0, 0, 0.2);
+      }
+      &.linkflair::before {
+        color: #761fa1;
+        opacity: 1;
+      }
     }
-
-    &:not(.hot-page) {
-        .sitetable .thing:first-child {
-            border-top: 2px solid rgba(0, 0, 0, 0.1);
-        }
+    .stickied + {
+      .stickied, div + .stickied {
+        margin-top: -20px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      }
     }
+  }
+  &:not(.hot-page) .sitetable .thing:first-child {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+  }
 }
 
 // RES Changes
