@@ -1,28 +1,22 @@
 {
-  "name": "rparagon-2.0",
-  "version": "2.0.0",
+  "name": "paragon-subreddit",
+  "private": true,
+  "version": "2.1.0",
   "description": "post v42",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "browser-sync": "^2.18.12",
-    "del": "^2.2.2",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-compass": "^2.1.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-csso": "^1.1.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^3.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-concat-css": "^2.3.0"
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0"
   },
   "scripts": {
-    "test": "fung mao"
+    "build": "gulp build",
+    "serve": "gulp serve"
   },
   "author": "Jamie Shepherd, maintained by u/JejuneKai & u/MCiLuZiioNz",
-  "license": "ISC"
+  "license": "MIT"
 }

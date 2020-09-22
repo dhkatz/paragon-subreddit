@@ -1,2 +1,2 @@
-# Paragon-Subreddit-2.0
+# Paragon Subreddit
 /r/Paragon Subreddit CSS - Managed by /u/JejuneKai and /u/MCiLuZiioNz
