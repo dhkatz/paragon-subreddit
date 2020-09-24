@@ -1,0 +1,13 @@
+{
+  "username": "",
+  "password": "",
+  "clientId": "",
+  "clientSecret": "",
+  "options": {
+    "subreddit": "paragon",
+    "stylesheet": true,
+    "images": false,
+    "backup": true,
+    "delete": false
+  }
+}

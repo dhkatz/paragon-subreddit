@@ -7,7 +7,7 @@
             width: 20px;
             height: 20px;
             margin: 4px 0;
-            background-image:url(%%spritesheet%%) !important;
+            background-image:url(/assets/spritesheet.png) !important;
             &.up {
                 background-position: 0 0;
             }
@@ -116,11 +116,11 @@
             background: $light-grey;
 
             &:before {
-                background: url(%%emblem-black%%) no-repeat;
+                background: url(/assets/emblem-black.png) no-repeat;
             }
         }
         .pagename a {
-            background: url(%%logo-black%%) no-repeat left center;
+            background: url(/assets/logo-black.png) no-repeat left center;
         }
     }
 }

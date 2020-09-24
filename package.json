@@ -6,16 +6,20 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.26.12",
+    "cheerio": "^1.0.0-rc.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-concat-css": "^3.1.0",
     "gulp-csso": "^4.0.1",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.1.0"
+    "gulp-sass": "^4.1.0",
+    "node-fetch": "^2.6.1",
+    "snoowrap": "^1.21.0"
   },
   "scripts": {
     "build": "gulp build",
-    "serve": "gulp serve"
+    "serve": "gulp serve",
+    "publish": "gulp publish"
   },
   "author": "Jamie Shepherd, maintained by u/JejuneKai & u/MCiLuZiioNz",
   "license": "MIT"

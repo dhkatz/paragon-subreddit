@@ -1,23 +1,23 @@
-// .flair-epic {
-// 		border: none;
-// 		border-radius: 0px;
-// 		padding-left: 0px;
-// 		margin-right: inherit;
-// 		background-color: transparent ;
-// 		background-image: url(%%flair-epic%%);
-// 		background-repeat: no-repeat;
-// 		width: 18px;
-// 		height: 20px;
-// 		margin-bottom: -5px;
-// 		margin-left: 2px;
-// 		text-indent: 100px;
-// 		white-space: nowrap;
-// 		overflow: hidden;
-// }
+ //.flair-epic {
+ //		border: none;
+ //		border-radius: 0px;
+ //		padding-left: 0px;
+ //		margin-right: inherit;
+ //		background-color: transparent ;
+ //		background-image: url(/assets/images/flair-epic.png);
+ //		background-repeat: no-repeat;
+ //		width: 18px;
+ //		height: 20px;
+ //		margin-bottom: -5px;
+ //		margin-left: 2px;
+ //		text-indent: 100px;
+ //		white-space: nowrap;
+ //		overflow: hidden;
+ //}
 
 .thumbnail.self {
-    background-image: url(%%flair-icons%%);
-    background-position: 0px 0px;
+    background-image: url(/assets/flair-icons.png);
+    background-position: 0 0;
     background-size: 100% auto;
     background-repeat: no-repeat;
     height: 50px;
@@ -42,7 +42,7 @@
 }
 
 .linkflair-official {
-    background: white url(%%epic-linkflair%%) center right no-repeat !important;
+    background: white url(/assets/epic-linkflair.png) center right no-repeat !important;
 
     .linkflairlabel {
         background: black;
@@ -129,8 +129,7 @@
         top: 16px;
         width: 50px;
         height: 50px;
-        background: url(%%flairs%%);
-        background-position: 0px 0px;
+        background: url(/assets/flairs.png) 0 0;
         padding: 0;
         border: 0;
         border-radius: 5px;
@@ -151,23 +150,22 @@
     top: 16px;
     width: 50px;
     height: 50px;
-    background: url(%%flairs%%);
-    background-position: 0px 0px;
+    background: url(/assets/flairs.png) 0 0;
     padding: 0;
     border: 0;
     border-radius: 5px;
 }
 
 .flair[class*="-challenger-"] {
-    background: url(%%flairs-challenger%%);
+    background: url(/assets/flairs-challenger.png);
 }
 
 .flair[class*="-master-"] {
-    background: url(%%flairs-master%%);
+    background: url(/assets/flairs-master.png);
 }
 
 .flair[class*="-npc-"] {
-    background: url(%%flairs-npc%%);
+    background: url(/assets/flairs-npc.png);
 }
 
 .flair-default {

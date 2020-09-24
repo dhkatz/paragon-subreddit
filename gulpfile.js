@@ -1,3 +1,4 @@
+const config = require('./config.json');
 const { task, src, dest, watch, series } = require('gulp');
 
 const sass = require('gulp-sass');
@@ -6,51 +7,108 @@ const csso = require('gulp-csso');
 const replace = require('gulp-replace');
 const autoprefixer = require('gulp-autoprefixer');
 
-const browserSync = require('browser-sync');
 const fs = require('fs');
+const util = require('util');
+
+const browserSync = require('browser-sync');
+const fetch = require('node-fetch').default;
+const cheerio = require('cheerio');
+const snoowrap = require('snoowrap');
 
 task('build', () => {
-    return src('src/theme.scss')
-        .pipe(sass())
-		.pipe(autoprefixer())
-	  	.pipe(mash('paragon.css'))
-        .pipe(dest('./build'))
-        .pipe(mash('paragon.min.css'))
-        .pipe(csso())
-        .pipe(dest('./build'))
+  return src('src/theme.scss')
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(mash('theme.css'))
+    .pipe(replace(/(\.\.[\/]?)*\/assets\/([\w-]+)\.(png|jpg)/g, '%%$2%%'))
+    .pipe(dest('./build'))
+    .pipe(mash('theme.min.css'))
+    .pipe(csso())
+    .pipe(dest('./build'))
 });
 
 task('serve:scss', () => {
-
-	return src('src/theme.scss')
-		.pipe(sass())
-		.pipe(autoprefixer())
-		.pipe(mash('paragon.css'))
-		.pipe(replace(/%%([\w-]+)%%/g, (match, path) => {
-			return `/images/${path}.${fs.existsSync(`${process.cwd()}/assets/images/${path}.png`) ? 'png' : 'jpg'}`
-		}))
-		.pipe(dest('./assets/css'))
-		.pipe(mash('paragon.min.css'))
-		.pipe(csso())
-		.pipe(dest('./assets/css'))
-		.pipe(browserSync.stream());
+  return src('src/theme.scss')
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(mash('theme.css'))
+    .pipe(replace(/((\.\.[\/]?)*\/assets)(\/([\w-]+)\.(png|jpg))/g, '$3'))
+    .pipe(dest('./assets/css'))
+    .pipe(mash('theme.min.css'))
+    .pipe(csso())
+    .pipe(dest('./assets/css'))
+    .pipe(browserSync.stream());
 });
 
-task('serve', series(task('serve:scss'), () => {
-	browserSync.init({
-		proxy: 'https://old.reddit.com/r/paragon',
-		files: ['assets/**'],
-		injectChanges: true,
-		serveStatic: ['./assets'],
-		rewriteRules: [
-			{
-				match: 'https://b.thumbs.redditmedia.com/IcftFLHWVvXurkmMtTxmdRw4hpyDRSuBpGn-GrL_kqk.css',
-				fn: () => '/css/paragon.min.css'
-			}
-		]
-	});
+task('serve', series(task('serve:scss'), async () => {
+  const url = `https://old.reddit.com/r/${config.options.subreddit}`;
+  const res = await fetch(url);
+  const body = await res.text();
+  const $ = cheerio.load(body);
+  const stylesheet = $('link[title=applied_subreddit_stylesheet]').attr('href');
 
-	watch('src/**/*.scss', task('serve:scss'));
+  browserSync.init({
+    proxy: url,
+    files: ['assets/**'],
+    injectChanges: true,
+    serveStatic: ['./assets'],
+    rewriteRules: [
+      {
+        match: stylesheet,
+        fn: () => '/css/theme.min.css'
+      }
+    ]
+  });
+
+  watch('src/**/*.scss', task('serve:scss'));
 }));
 
-task('build', task('build'));
+task('publish', series(task('build'), async () => {
+  const reddit = new snoowrap({
+    username: config.username,
+    password: config.password,
+    clientId: config.clientId,
+    clientSecret: config.clientSecret,
+    userAgent: 'Paragon Subreddit (Stylesheet)'
+  });
+
+  const subreddit = await reddit.getSubreddit(config.options.subreddit).fetch();
+  const css = fs.readFileSync('./build/theme.css').toString();
+
+  const data = await reddit.oauthRequest({ uri: `/r/${config.options.subreddit}/about/stylesheet` });
+
+  if (config.options.backup) {
+    const writeFile = util.promisify(fs.writeFile)
+
+    if (!fs.existsSync('./backup')) {
+      fs.mkdirSync('./backup');
+    }
+
+    await Promise.all(
+      data.images.map(async ({ name, url }) => {
+        const res = await fetch(url);
+        const data = await res.arrayBuffer();
+
+        await writeFile(`./backup/${name}.${url.slice(-3)}`, Buffer.from(data));
+      })
+    )
+  }
+
+  if (config.options.images) {
+    const images = [...new Set([...css.matchAll(/%%([\w-]+)%%/g)].map(i => i[1]))];
+
+    await Promise.all(data.images.map(async ({ name }) => {
+      if (config.options.delete && !images.includes(name)) {
+        return await subreddit.deleteImage({ imageName: name })
+      } else {
+        return await subreddit.uploadStylesheetImage({ name, file: path.join(process.cwd(), `./assets/${name}`) })
+      }
+    }));
+  }
+
+  if (config.options.stylesheet) {
+    await subreddit.updateStylesheet({ css, reason: `Publish from /r/${subreddit} build tool.` });
+  }
+}));
+
+task('default', task('build'));

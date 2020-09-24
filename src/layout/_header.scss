@@ -3,11 +3,10 @@
 	&::before {
 		content: "";
     	z-index: -1;
-    	background: #000 url(%%header%%) no-repeat;
-    	display: block;
+		display: block;
     	background-size: cover !important;
-    	background-position: top center;
-    	height: $header-height;
+		background: #000 url(/assets/header.jpg) no-repeat top center;
+		height: $header-height;
 	}
 	#header-img.default-header {
 		display: none;

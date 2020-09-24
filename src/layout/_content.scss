@@ -1,6 +1,16 @@
 .content {
     margin: 84px 340px 20px 20px;
-    margin-right: 340px;
+
+    .listingsignupbar {
+        margin-bottom: 20px !important;
+        box-shadow: 0 -1px 12px -3px rgba(0,0,0,.2);
+        height: 150px;
+        background: white !important;
+
+        .listingsignupbar__close:hover {
+            text-decoration: none !important;
+        }
+    }
 
     .thing {
         background: white;
@@ -155,7 +165,7 @@
     #noresults {
         padding: 20px;
         margin-right: 0;
-        background: url(%%noresults%%) center center no-repeat;
+        background: url(/assets/noresults.png) center center no-repeat;
         text-indent: -9999px;
         overflow: hidden;
         font-size: 0;
@@ -304,8 +314,7 @@ body {
             right: 10px;
             width: 10px;
             height: 9px;
-            background: url(%%spritesheet%%);
-            background-position: -45px -5px;
+            background: url(/assets/spritesheet.png) -45px -5px;
         }
     }
 }

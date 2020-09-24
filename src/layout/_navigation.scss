@@ -10,7 +10,7 @@
 			content: '';
             width: 96px;
 			height: 100px;
-			background: url(%%emblem%%) no-repeat;
+			background: url(/assets/emblem.png) no-repeat;
 			display: inline-block;
 			margin-left: 15px;
 			margin-top: -54px;
@@ -28,7 +28,7 @@
 			white-space: nowrap;
 			width: 253px;
 			height: 35px;
-			background: url(%%logo%%) no-repeat left center;
+			background: url(/assets/logo.png) no-repeat left center;
 			margin-bottom: 0;
 			margin-left: -5px;
 			animation: flicker 10s normal infinite;
@@ -65,10 +65,9 @@
 				font-weight: normal;
 				color: #ccc;
 				background: none;
-				padding: 24px 10px 22px;
 				border: none;
 				position: relative;
-				padding-bottom: 21px;
+				padding: 24px 10px 21px;
 				display: inline-block;
 				&:hover {
 					text-decoration: none;

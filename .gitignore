@@ -2,3 +2,5 @@
 node_modules/
 css/
 build/
+config.json
+backup/

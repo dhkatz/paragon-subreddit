@@ -107,27 +107,25 @@
     height: 165px;
     padding: 0;
     margin: 0;
-    background: black no-repeat;
     background-size: contain;
-    background-position: center;
-    border: 1px solid #fff;
+    background: black no-repeat center;
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition-duration: 0s;
     transition: border .31s cubic-bezier(0, 0.74, 0.58, 1);
 }
 
 .side blockquote li:nth-child(1) a {
-    background-image: url(%%featured%%);
+    background-image: url(/assets/featured.png);
     animation: slide-1 30s infinite;
 }
 
 .side blockquote li:nth-child(2) a {
-    background-image: url(%%featured2%%);
+    background-image: url(/assets/featured2.png);
     animation: slide-2 30s infinite;
 }
 
 .side blockquote li:nth-child(3) a {
-    background-image: url(%%featured3%%);
+    background-image: url(/assets/featured3.png);
     animation: slide-3 30s infinite;
 }
 
@@ -139,10 +137,9 @@
         top: 316px !important;
         left: 430px !important;
         right: 0 !important;
-        background: none;
         width: 32px;
         height: 32px;
-        background: url(%%discord%%) no-repeat !important;
+        background: url(/assets/discord.png) no-repeat !important;
         border: none;
 
         &:hover {
@@ -182,10 +179,9 @@
         top: 314px !important;
         left: 490px !important;
         right: 0 !important;
-        background: none;
         width: 32px;
         height: 32px;
-        background: url(%%calendar%%) no-repeat;
+        background: url(/assets/calendar.png) no-repeat;
         border: none;
 
         &:hover {
@@ -225,10 +221,9 @@
         top: 316px !important;
         left: 550px !important;
         right: 0 !important;
-        background: none;
         width: 32px;
         height: 32px;
-        background: url(%%faq%%) no-repeat;
+        background: url(/assets/faq.png) no-repeat;
         border: none;
 
         &:hover {

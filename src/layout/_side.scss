@@ -5,6 +5,10 @@
     .spacer {
         margin: 0;
 
+        .premium-banner-outer {
+            margin-top: 20px !important;
+        }
+
         &.no-icon {
             display: none;
         }

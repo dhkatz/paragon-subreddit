@@ -1,0 +1,72 @@
+#header {
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    display: block;
+    background-image: url(/assets/movingsnow.png);
+    position: absolute;
+    top: -150px;
+    left: -50%;
+    min-width: 2400px;
+    height: 1200px;
+    width: 200vw;
+    transform: translateX(-300px) translateY(-300px);
+    animation: snowfall 10s linear infinite;
+    overflow: hidden;
+    margin: 0;
+  }
+  #sr-header-area {
+    z-index: 2;
+  }
+  #header-bottom-left {
+    z-index: 2;
+  }
+  #header-bottom-right {
+    z-index: 2;
+  }
+}
+body {
+  overflow-x: hidden !important;
+}
+
+@keyframes snowfall {
+  to {
+    transform: none;
+  }
+}
+
+// Featured hat and snow
+.side blockquote:last-of-type {
+  li a {
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 514px;
+      height: 123px;
+      top: -27px;
+      left: -28px;
+      position: absolute;
+      background: url(/assets/featuredsnow.png) no-repeat;
+      z-index: 9999;
+    }
+  }
+}
+
+#header {
+  #header-bottom-left {
+    &:before {
+      width: 110px !important;
+      height: 110px !important;
+      background: url(/assets/emblemsnow.png) no-repeat !important;
+      margin-left: 5px !important;
+      margin-top: -60px !important;
+    }
+  }
+  .pagename a {
+    margin-bottom: 3px !important;
+  }
+}
+
+/* Fixes the header with Reddit's Christmas Snoo */
+#header-img { display: none}
