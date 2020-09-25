@@ -9,6 +9,7 @@ const autoprefixer = require('gulp-autoprefixer');
 
 const fs = require('fs');
 const util = require('util');
+const path = require('path');
 
 const browserSync = require('browser-sync');
 const fetch = require('node-fetch').default;
@@ -77,6 +78,8 @@ task('publish', series(task('build'), async () => {
 
   const data = await reddit.oauthRequest({ uri: `/r/${config.options.subreddit}/about/stylesheet` });
 
+  console.log(css.split('\n').length);
+
   if (config.options.backup) {
     const writeFile = util.promisify(fs.writeFile)
 
@@ -95,19 +98,30 @@ task('publish', series(task('build'), async () => {
   }
 
   if (config.options.images) {
-    const images = [...new Set([...css.matchAll(/%%([\w-]+)%%/g)].map(i => i[1]))];
+    const stylesheetImages = [...new Set([...css.matchAll(/%%([\w-]+)%%/g)].map(i => i[1]))];
 
-    await Promise.all(data.images.map(async ({ name }) => {
-      if (config.options.delete && !images.includes(name)) {
+    await Promise.all(data.images.map(async ({ name, url }) => {
+      if (config.options.delete && !stylesheetImages.includes(name)) {
+        console.log(`\tDeleting '${name}.${url.slice(-3)}'...`);
         return await subreddit.deleteImage({ imageName: name })
-      } else {
-        return await subreddit.uploadStylesheetImage({ name, file: path.join(process.cwd(), `./assets/${name}`) })
       }
+    }));
+
+    await Promise.all(stylesheetImages.map(async name => {
+      const assets = path.join(process.cwd(), './assets/');
+      const ext = fs.existsSync(`${assets}/${name}.png`) ? 'png' : 'jpg';
+
+      console.log(`\tUploading '${name}.${ext}'...`);
+      return await subreddit.uploadStylesheetImage({
+        name, file: path.join(process.cwd(), `./assets/${name}.${ext}`)
+      })
     }));
   }
 
   if (config.options.stylesheet) {
-    await subreddit.updateStylesheet({ css, reason: `Publish from /r/${subreddit} build tool.` });
+    console.log(`\tUploading stylesheet 'theme.css'...`);
+
+    await subreddit.updateStylesheet({ css, reason: `Publish from /r/${config.options.subreddit} build tool.` });
   }
 }));
 

@@ -1,8 +1,8 @@
 {
   "name": "paragon-subreddit",
   "private": true,
-  "version": "2.1.0",
-  "description": "post v42",
+  "version": "2.2.0",
+  "description": "/r/Paragon Subreddit CSS - Managed by /u/JejuneKai and /u/MCiLuZiioNz",
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.26.12",

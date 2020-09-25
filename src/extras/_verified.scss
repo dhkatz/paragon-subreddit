@@ -1,7 +1,14 @@
-a[href$="user/MCiLuZiioNz"]:before {
-  content: url(/assets/verified.png);
-  position: relative;
-  right: -4px;
-  bottom: -4px;
-  margin-right: 8px;
+a[href$="user/SneakyParagon"],
+a[href$="user/Sevrahn"] {
+  &.submitter {
+    padding-bottom: 6.5px !important;
+  }
+
+  &:before {
+    content: url(/assets/verified.png);
+    position: relative;
+    right: -4px;
+    bottom: -4px;
+    margin-right: 8px;
+  }
 }

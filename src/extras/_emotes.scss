@@ -1,0 +1,15 @@
+.md [href^="#"] {
+  position: relative;
+  top: 4px;
+  background: url(/assets/emotes.png);
+  background-size: 100%;
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  margin-right: .3em;
+  pointer-events: none;
+}
+
+.md [href="#rip"] {
+  background-position: 0 0;
+}

@@ -1,0 +1,54 @@
+//.side hr:last-of-type {
+//    display: none;
+//}
+
+.titlebox h6:nth-of-type(1) {
+    display: block;
+    position: absolute;
+    top: 370px;
+    right: 340px;
+    left: 20px;
+    padding: 0 0 0 85px;
+    min-width: 725px;
+    max-height: 46px;
+    overflow: hidden;
+    background-color: #FFF;
+    color: #666;
+    text-align: left;
+    font-weight: 300;
+    font-size: 14px;
+    box-shadow: $shadow;
+    text-decoration: none;
+
+    del {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        width: 100%;
+        animation: slideBox 15s infinite ease;
+
+        strong {
+            display: inline-block;
+            width: 100%;
+            padding: 15px 0;
+        }
+    }
+
+    a {
+        color: #427FED;
+    }
+}
+
+.titlebox a[href$="/news"] {
+    position: absolute;
+    display: block;
+    left: 20px;
+    top: 380px;
+    padding: 0 15px;
+    height: 48px;
+    font-weight: 700;
+    color: $gold;
+    line-height: 50px;
+    border-left: 4px solid $gold;
+    z-index: 1;
+}

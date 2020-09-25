@@ -1,0 +1,84 @@
+/* FEATURED LINKS */
+
+.content {
+    margin-top: 84px;
+}
+
+.side {
+    blockquote {
+        /* Z-INDEX FIX FOR FEATURED AND NAVIGATION ICONS */
+        &:last-of-type {
+            a {
+                z-index: 1337;
+            }
+        }
+
+        ul:hover:after, blockquote:hover li a {
+            animation-play-state: paused !important;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            list-style-position: inside;
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 165px;
+            display: inline-block;
+
+            &:after {
+                content: " ";
+                z-index: 2000;
+                display: block;
+                position: relative;
+                top: 199px;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                margin-left: -356px;
+                height: 2px;
+                background: #dbbd68;
+                animation: bar 10s linear infinite;
+            }
+        }
+
+        li {
+            &:nth-child(1) a {
+                background-image: url(/assets/featured.png);
+                animation: slide-1 30s infinite;
+            }
+
+            &:nth-child(2) a {
+                background-image: url(/assets/featured2.png);
+                animation: slide-2 30s infinite;
+            }
+
+            &:nth-child(3) a {
+                background-image: url(/assets/featured3.png);
+                animation: slide-3 30s infinite;
+            }
+
+            a {
+                &:hover {
+                    border-color: $gold;
+                }
+
+                position: absolute;
+                right: 40px;
+                top: 35px;
+                display: inline-block;
+                width: 480px;
+                height: 165px;
+                padding: 0;
+                margin: 0;
+                background-size: contain;
+                background: black no-repeat center;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                transition-duration: 0s;
+                transition: border .31s cubic-bezier(0, 0.74, 0.58, 1);
+            }
+        }
+    }
+}

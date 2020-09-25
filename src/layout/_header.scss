@@ -5,7 +5,7 @@
     	z-index: -1;
 		display: block;
     	background-size: cover !important;
-		background: #000 url(/assets/header.jpg) no-repeat top center;
+		background: #000 url(/assets/header.png) no-repeat top center;
 		height: $header-height;
 	}
 	#header-img.default-header {
@@ -75,30 +75,4 @@
 	a {
 		color: #ccc;
 	}
-}
-
-// RES
-.res #RESSubredditGroupDropdown .RESShortcutsCurrentSub a, .res #sr-header-area a.RESShortcutsCurrentSub {
-	color: white !important;
-}
-.res #RESShortcutsEditContainer {
-	margin-right: 430px;
-    top: 3px;
-    background: none;
-    #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
-        background: none;
-        opacity: 0.5;
-        color: white;
-        &:hover {
-            opacity: 1.0;
-        }
-    }
-}
-.res #RESShortcutsViewport {
-    margin-right: 520px;
-}
-.res #userbarToggle {
-	background: none;
-	color: rgba(255,255,255,0.5);
-	border: none;
 }

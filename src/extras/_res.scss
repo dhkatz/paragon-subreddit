@@ -1,0 +1,109 @@
+/**
+Content
+ */
+
+.link {
+  position: relative;
+
+  .RES-keyNav-activeElement,
+  .RES-keyNav-activeElement .md-container {
+    background: none !important;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 10px;
+      height: 9px;
+      background: url(/assets/spritesheet.png) -45px -5px;
+    }
+  }
+}
+
+.content .RESBigEditorPop {
+  text-indent: 0;
+  overflow: visible;
+  font-size: 0;
+  width: auto;
+  height: auto;
+  border: none;
+  margin-left: 10px;
+  padding: 0;
+  background-color: transparent !important;
+  color: $foreground;
+}
+
+/**
+Comments
+ */
+
+.comments-page {
+  .comment {
+    position: relative;
+    .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container,
+    .RES-keyNav-activeElement, .RES-keyNav-activeElement .md {
+      background: none !important;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 10px;
+        height: 9px;
+        background: url(/assets/spritesheet.png) -45px -5px;
+      }
+    }
+  }
+  .commentarea {
+    .RESSubscriptionButton {
+      border: none;
+      padding: 0;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    #REScommentNavToggle {
+      font-size: 14px;
+      .commentNavSortType {
+        font-size: 12px !important;
+      }
+    }
+  }
+}
+.res-commentBoxes.res-commentBoxes-rounded .comment {
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 15px !important;
+  margin: 10px 0 !important;
+}
+
+/**
+Header
+ */
+
+.res #RESSubredditGroupDropdown .RESShortcutsCurrentSub a, .res #sr-header-area a.RESShortcutsCurrentSub {
+  color: white !important;
+}
+.res #RESShortcutsEditContainer {
+  margin-right: 430px;
+  top: 3px;
+  background: none;
+  #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
+    background: none;
+    opacity: 0.5;
+    color: white;
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+}
+.res #RESShortcutsViewport {
+  margin-right: 520px;
+}
+.res #userbarToggle {
+  background: none;
+  color: rgba(255,255,255,0.5);
+  border: none;
+}

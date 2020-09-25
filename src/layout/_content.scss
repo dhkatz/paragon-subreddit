@@ -1,5 +1,5 @@
 .content {
-    margin: 84px 340px 20px 20px;
+    margin: 20px 340px 20px 20px;
 
     .listingsignupbar {
         margin-bottom: 20px !important;
@@ -296,47 +296,4 @@ body {
             border-top: 2px solid rgba(0, 0, 0, 0.1);
         }
     }
-}
-
-// RES
-
-.link {
-    position: relative;
-
-    .RES-keyNav-activeElement,
-    .RES-keyNav-activeElement .md-container {
-        background: none !important;
-
-        &:after {
-            content: '';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 10px;
-            height: 9px;
-            background: url(/assets/spritesheet.png) -45px -5px;
-        }
-    }
-}
-
-// .content .RESBigEditorPop {
-//     text-indent: -9999px;
-//     overflow: hidden;
-//     font-size: 0;
-//     width: 20px;
-//     height: 16px;
-//     border: none;
-//     margin-left: 5px;
-// }
-.content .RESBigEditorPop {
-    text-indent: 0;
-    overflow: visible;
-    font-size: 0;
-    width: auto;
-    height: auto;
-    border: none;
-    margin-left: 10px;
-    padding: 0;
-    background-color: transparent !important;
-    color: $foreground;
 }

@@ -1,0 +1,131 @@
+/* NAVIGATION BAR ICONS */
+
+#header .tabmenu {
+  padding-left: 215px;
+}
+
+.side blockquote p:nth-child(1) {
+  a {
+    position: absolute;
+    top: 316px !important;
+    left: 430px !important;
+    right: 0 !important;
+    width: 32px;
+    height: 32px;
+    background: url(/assets/discord.png) no-repeat !important;
+    border: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:before {
+    content: 'Join us on Discord for community discussion!';
+    background: black;
+    background: rgba(0, 0, 0, 0.85);
+    color: $gold;
+    border: 1px solid $gold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 265px;
+    left: 290px;
+    padding: 10px 20px;
+    z-index: 1337;
+    border-radius: 3px;
+    font-size: 11px;
+    opacity: 0;
+    transition: top 0.3s, opacity 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+      top: 255px;
+    }
+  }
+}
+
+.side blockquote p:nth-child(2) {
+  a {
+    position: absolute;
+    top: 314px !important;
+    left: 490px !important;
+    right: 0 !important;
+    width: 32px;
+    height: 32px;
+    background: url(/assets/calendar.png) no-repeat;
+    border: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:before {
+    content: 'View the community calendar for upcoming events!';
+    background: black;
+    background: rgba(0, 0, 0, 0.85);
+    color: $gold;
+    border: 1px solid $gold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 265px;
+    left: 340px;
+    padding: 10px 20px;
+    z-index: 1337;
+    border-radius: 3px;
+    font-size: 11px;
+    opacity: 0;
+    transition: top 0.3s, opacity 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+      top: 255px;
+    }
+  }
+}
+
+.side blockquote p:nth-child(3) {
+  a {
+    position: absolute;
+    top: 316px !important;
+    left: 550px !important;
+    right: 0 !important;
+    width: 32px;
+    height: 32px;
+    background: url(/assets/faq.png) no-repeat;
+    border: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:before {
+    content: 'Frequently asked questions by the community.';
+    background: black;
+    background: rgba(0, 0, 0, 0.85);
+    color: $gold;
+    border: 1px solid $gold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 265px;
+    left: 400px;
+    padding: 10px 20px;
+    z-index: 1337;
+    border-radius: 3px;
+    font-size: 11px;
+    opacity: 0;
+    transition: top 0.3s, opacity 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+      top: 255px;
+    }
+  }
+}

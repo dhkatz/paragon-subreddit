@@ -9,16 +9,11 @@
 @import 'components/highlights';
 @import 'components/flairs';
 @import 'components/votes';
-@import 'components/featured';
 @import 'components/infobar';
-// @import 'components/nightmode';
 
 //@import 'events/christmas';
 // @import 'events/mothersday';
 // @import 'events/shadowseve';
-
-@import 'extras/confetti';
-@import 'extras/verified';
 
 @import 'layout/main';
 @import 'layout/header';
@@ -32,3 +27,13 @@
 @import 'layout/markdown';
 @import 'layout/wiki';
 @import 'layout/search';
+
+@import 'extras/news';
+@import 'extras/navbar';
+@import 'extras/confetti';
+@import 'extras/verified';
+@import 'extras/featured';
+@import 'extras/employees';
+@import 'extras/emotes';
+@import 'extras/res';
+// @import 'extras/nightmode';
