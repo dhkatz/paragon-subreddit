@@ -1,6 +1,6 @@
 # Paragon Subreddit
 
-![version](https://img.shields.io/badge/version-2.1.0-blue)
+![version](https://img.shields.io/badge/version-2.2.0-blue)
 
 [/r/Paragon](https://old.reddit.com/r/paragon/) Subreddit CSS - 
 Managed by [/u/JejuneKai](https://www.reddit.com/user/JejuneKai)
