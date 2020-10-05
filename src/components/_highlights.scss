@@ -1,12 +1,14 @@
+@import "src/utilities/variables";
+
 .content {
 	.thing .tagline .author.moderator {
-		background-color: $green !important;
+		background-color: $stickied !important;
 		color: white;
 		padding: 2px 4px;
 		border-radius: 0;
 		font-weight: bold;
 		&:hover {
-			background: lighten($green, 10%) !important;
+			background: lighten($stickied, 10%) !important;
 		}
 	}
 	.thing .tagline .author.submitter {

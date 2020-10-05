@@ -12,12 +12,12 @@
             border-radius: 0;
         }
         .search-submit-button.c-btn-primary {
-            background: $gold;
+            background: $primary;
             border: none;
             border-radius: 0;
             padding: 6px 15px 5px;
             &:hover {
-                background: lighten($gold, 10%);
+                background: lighten($primary, 10%);
             }
         }
     }

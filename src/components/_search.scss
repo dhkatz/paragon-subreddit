@@ -2,9 +2,9 @@
 
 #search {
 	position: absolute;
-	top: 318px;
+	top: $header-height + 18;
 	z-index: 1337;
-	background: $dark-grey;
+	background: $secondary;
 
 	&:before {
 		content: "";
@@ -30,7 +30,7 @@
 		margin-top: 13px;
 		border-radius: 0;
 		box-shadow: $shadow;
-		border: 1px solid $dark-grey;
+		border: 1px solid $secondary;
 		transition-duration: 0s;
 	}
 

@@ -19,11 +19,11 @@
 
 .link .score {
 	&.likes {
-		color: $upvote
+		color: $upvote;
 	}
 
 	&.dislikes {
-		color: $downvote
+		color: $downvote;
 	}
 
 	max-width: 21px;

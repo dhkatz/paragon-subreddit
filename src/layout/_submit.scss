@@ -57,7 +57,7 @@
         letter-spacing: 2px;
         color: #DDD;
         &:hover {
-            color: $gold;
+            color: $primary;
         }
     }
 	ul.tabmenu.formtab {
@@ -66,13 +66,13 @@
 		margin: 15px 0 10px;
 		li {
             &.selected a {
-                background-color: $gold;
+                background-color: $primary;
                 box-shadow: -0.25px 0 2.75px 0.25px rgba(0,0,0,0.2) !important;
                 padding-left: 117px;
                 padding-right: 117px;
                 &:hover {
                     color: white;
-                    background-color: lighten($gold, 10%);
+                    background-color: lighten($primary, 10%);
                 }
             }
 			a {

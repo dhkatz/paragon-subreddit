@@ -2,72 +2,74 @@
 	border: none;
 	&::before {
 		content: "";
-    	z-index: -1;
+		z-index: -1;
 		display: block;
-    	background-size: cover !important;
+		background-size: cover !important;
 		background: #000 url(/assets/header.png) no-repeat top center;
 		height: $header-height;
 	}
 	#header-img.default-header {
 		display: none;
 	}
-    #header-img { display: none; }
-}
-#sr-header-area {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	background: #1f1f1f; // Old browsers
-	background: rgba(0,0,0,0.8);
-	color: #cccccc;
-	font-size: 10px;
-	border: none;
-	padding: 3px 0;
-	.width-clip {
-		right: 400px;
-	}
-	.sr-list {
-		margin-right: 48px;
-	}
-	#sr-more-link {
-		color: white;
-		background: none;
-	}
-	#srLeftContainer {
-		padding-left: 10px;
-	}
-	.dropdown.srdrop {
-		.selected {
+
+	#header-img { display: none; }
+
+	#sr-header-area {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		background: #1f1f1f; // Old browsers
+		background: rgba(0,0,0,0.8);
+		color: #cccccc;
+		font-size: 10px;
+		border: none;
+		padding: 3px 0;
+		.width-clip {
+			right: 400px;
+		}
+		.sr-list {
+			margin-right: 48px;
+		}
+		#sr-more-link {
 			color: white;
-			margin-right: 0;
-			padding-right: 24px;
+			background: none;
+		}
+		#srLeftContainer {
 			padding-left: 10px;
 		}
+		.dropdown.srdrop {
+			.selected {
+				color: white;
+				margin-right: 0;
+				padding-right: 24px;
+				padding-left: 10px;
+			}
+		}
 	}
-}
 
-#header-bottom-right {
-	position: absolute;
-	padding: 6px 0;
-	top: 0 !important;
-	right: 10px;
-	width: auto;
-	height: 18px;
-	font-size: 11px;
-	background: none;
-	color: white;
-	.user {
-		text-transform: uppercase;
-		font-weight: bold;
-	}
-	&.res-navTop {
-		top: -2px !important;
-	}
-	a {
+	#header-bottom-right {
+		position: absolute;
+		padding: 6px 0;
+		top: 0 !important;
+		right: 10px;
+		width: auto;
+		height: 18px;
+		font-size: 11px;
+		background: none;
 		color: white;
-	}
-	#userbarToggle {
-		top: 0;
+		.user {
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		&.res-navTop {
+			top: -2px !important;
+		}
+		a {
+			color: white;
+		}
+		#userbarToggle {
+			top: 0;
+		}
 	}
 }
 

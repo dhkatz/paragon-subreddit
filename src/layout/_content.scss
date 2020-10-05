@@ -71,7 +71,7 @@
             visibility: hidden;
 
             .moderator {
-                background: $green;
+                background: $stickied;
                 color: white;
                 font-size: 9px;
                 font-weight: bold;
@@ -101,7 +101,7 @@
             font-size: 18px;
 
             &:visited {
-                color: $grey;
+                color: #738491;
             }
         }
 
@@ -199,7 +199,7 @@
         text-transform: capitalize;
 
         a {
-            background-color: $gold;
+            background-color: $primary;
             color: white;
             font-size: 12px;
             font-weight: normal;
@@ -212,7 +212,7 @@
             border-radius: 0;
 
             &:hover {
-                background-color: lighten($gold, 10%);
+                background-color: lighten($primary, 10%);
                 text-decoration: none;
             }
         }
@@ -247,7 +247,7 @@
         }
 
         button {
-            color: $gold;
+            color: $primary;
             border: none;
         }
     }
@@ -259,11 +259,11 @@ body {
             margin-bottom: 20px;
 
             a.title, a.title:visited, .flat-list.buttons li.first a {
-                color: $green;
+                color: $stickied;
             }
 
             .entry .buttons li a {
-                color: $green;
+                color: $stickied;
             }
 
             .stickied-tagline {
@@ -280,7 +280,7 @@ body {
             }
 
             &.linkflair::before {
-                color: $green;
+                color: $stickied;
                 opacity: 1;
             }
         }

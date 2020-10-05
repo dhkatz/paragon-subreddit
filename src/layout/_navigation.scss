@@ -3,7 +3,7 @@
 // Main navigation
 #header {
 	#header-bottom-left {
-		background: $dark-grey;
+		background: $secondary;
 		width: 100%;
 		height: 60px;
 		font-size: 12px;
@@ -22,7 +22,7 @@
 	.pagename {
 		//display: none;
 		font-size: 0;
-		color: $dark-grey;
+		color: $secondary;
 		a {
 			display: inline-block;
 			text-indent: 100%;

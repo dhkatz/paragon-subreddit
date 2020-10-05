@@ -1,5 +1,7 @@
+@import '../utilities/variables';
+
 .footer-parent {
-	background: #1d1d1d url(/assets/footerbg.jpg) top center no-repeat;
+	background: #1d1d1d url(/assets/footerbg.png) top center no-repeat;
 	background-size: cover;
 	min-height: 500px;
 	padding-top: 0;
@@ -9,7 +11,7 @@
 		margin-bottom: 30px;
 	}
 	.flat-vert.title {
-		color: $gold;
+		color: $primary;
 	}
 	li a {
 		color: white;
@@ -19,7 +21,7 @@
 		border: none;
 	}
 	.buygold {
-		color: $gold;
+		color: $primary;
 	}
 	.bottommenu {
 		color: #bbbbbb;
@@ -42,6 +44,7 @@
 #hsts_pixel {
 	display: none;
 }
+
 .debuginfo {
 	position: absolute;
 	bottom: 4px;

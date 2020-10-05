@@ -1,43 +1,95 @@
-a.author[href$="/raczilla"],
-a.author[href$="/S-LG"],
-a.author[href$="/JustMooney1"],
-a.author[href$="/Chris_Attalus"],
-a.author[href$="/iFlak"],
-a.author[href$="/inuswetrust1"],
-a.author[href$="/hofftv"],
-a.author[href$="/ZooKeeperZak"],
-a.author[href$="/ConstantDesigner"],
-a.author[href$="/EpicTense"],
-a.author[href$="/EpicEricSW"],
-a.author[href$="/EPIC_Tokaj"],
-a.author[href$="/InUsWeTrust1"],
-a.author[href$="/arctyczyn"],
-a.author[href$="/MichaelNoland"],
-a.author[href$="/MrPopoTFS"],
-a.author[href$="/AfroDeezyShak"],
-a.author[href$="/Epic_Joel"],
-a.author[href$="/DanDaDaDanDan"],
-a.author[href$="/spazinski"],
-a.author[href$="/EpicPente"],
-a.author[href$="/RZELive"],
-a.author[href$="/darkveil"],
-a.author[href$="/sweedinmusic"],
-a.author[href$="/MythicBasil"],
-a.author[href$="/EpicCodyB"],
-a.author[href$="/AaronAtEpic"],
-a.author[href$="/Shank_TheTank"],
-a.author[href$="/EpicLoomin"],
-a.author[href$="/kyle-dev-epic"],
-a.author[href$="/EpicCodyB"],
-a.author[href$="/ModernRyoga"],
-a.author[href$="/SkribblrPrsn"]{
-  display: inline-block;
-  margin-right: .5em;
-  padding: 1px;
-  background: #add8e6;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  color: #fff;
-  font-size: x-small;
-  margin-top: -1px;
+$employees: (
+  '-MrW',
+  '3van',
+  'AaronAtEpic',
+  'AaronMFJ',
+  'AryssSkaHara',
+  'Cindewittchen',
+  'DJDerrickG',
+  'DanDaDaDanDan',
+  'DavetheBuck',
+  'EPIC-Looney',
+  'EPIC-MrPopoTFS',
+  'EPIC_Clintonious',
+  'EPIC_Luke',
+  'EPIC_Pente',
+  'EPIC_Tokaj',
+  'EmptyTux',
+  'EpicBoaty',
+  'EpicChenin',
+  'EpicDustyDevo',
+  'EpicEricSW',
+  'EpicErica',
+  'EpicGoinHamm',
+  'EpicIrascible',
+  'EpicLoomin',
+  'EpicMattS',
+  'EpicRook',
+  'EpicSuzDay',
+  'EpicTense',
+  'Epic_Boomer',
+  'Epic_Jason',
+  'Epicbanks',
+  'EricSw',
+  'FreightTrainUSA',
+  'GILLIES-',
+  'InnerChildNDC',
+  'JShredz',
+  'JustMooney1',
+  'KLAUSFIST',
+  'Kimmundi',
+  'Ks_m',
+  'LilLadyMuerte',
+  'M_House_Epic',
+  'MagmaReef',
+  'Magyst',
+  'Matti91Tilde',
+  'MichaelMcRooney',
+  'MichaelNoland',
+  'Miz_Calamity',
+  'ModernRyoga',
+  'MrPopoTFS',
+  'MythicBasil',
+  'NeuronBasher',
+  'NickDarnell',
+  'NickDonaldson',
+  'PoppinFreshDoze',
+  'RZELive',
+  'RebelAndroid',
+  'Riot001',
+  'SkribblrPrsn',
+  'SkyzYn',
+  'Slevin_009',
+  'SungGries',
+  'TeamHomebase',
+  'TheFortniteTeam',
+  'TheStevieT',
+  'ZooKeeperZak',
+  'arj4n',
+  'avgulotta',
+  'bri_jaeger',
+  'dark-kensou',
+  'darkveil',
+  'gortag',
+  'gstaffEpic',
+  'iFlak',
+  'kulvard',
+  'maurymountain',
+  'spazinski',
+  'stevieT',
+  'sweedinmusic',
+  'zakbeaudio'
+);
+
+@each $employee in $employees {
+  a.author[href$="/#{$employee}"] {
+    background-color: #333 !important;
+    margin-right: 0.5em;
+    margin-top: -1px;
+    padding: 2px 5px;
+    border-left: solid 1px grey;
+    color: #fff !important;
+    text-decoration: none;
+    margin-left: 0.25em;
+  }
 }

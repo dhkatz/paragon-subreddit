@@ -1,15 +1,11 @@
 //Fixes for various screen sizes and ratios
 
 @media screen and (min-width: 1920px) {
-    #header::before {
-        background-size: 100vw !important;
-        //background: #000 url(%%header%%) no-repeat !important;
-        //background-position: top center !important;
-    }
+  #header::before {
+    background-size: 100vw !important;
+  }
 
-     #header::before {
-        image-rendering: crisp-edges;
-        image-rendering: -moz-crisp-edges;
-       image-rendering: -webkit-crisp-edges;
-    }
+  #header::before {
+    image-rendering: crisp-edges;
+  }
 }

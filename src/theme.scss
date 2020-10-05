@@ -13,7 +13,7 @@
 
 //@import 'events/christmas';
 // @import 'events/mothersday';
-// @import 'events/shadowseve';
+@import 'events/shadowseve';
 
 @import 'layout/main';
 @import 'layout/header';
@@ -28,12 +28,13 @@
 @import 'layout/wiki';
 @import 'layout/search';
 
-@import 'extras/news';
-@import 'extras/navbar';
+// @import 'extras/news';
+// @import 'extras/navbar';
 @import 'extras/confetti';
 @import 'extras/verified';
-@import 'extras/featured';
+// @import 'extras/featured';
 @import 'extras/employees';
 @import 'extras/emotes';
+@import 'extras/stickied';
 @import 'extras/res';
 // @import 'extras/nightmode';

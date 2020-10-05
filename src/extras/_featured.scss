@@ -1,7 +1,40 @@
-/* FEATURED LINKS */
+/* FEATURED IMAGE SLIDER */
 
-.content {
-    margin-top: 84px;
+// Change how many featured images are used
+$count: 3;
+
+@for $i from 1 through $count {
+    @keyframes slide-#{$i} {
+        @for $j from 0 through $count * 2 {
+            $p: 28 * ceil($j / 2) + (5 + 1 / 3) * floor($j / 2) * 1%;
+            $val: floor($j / 2) + 1 - $i;
+            $on: $val == 0 or $val == 3;
+
+            #{$p} {
+                opacity: if($on, 1, 0);
+                z-index: if($on, 1337, -1);
+            }
+        }
+    }
+}
+
+/* loading bar */
+
+@keyframes bar {
+    0% {
+        opacity: 1;
+        width: 0;
+    }
+
+    84% {
+        opacity: 1;
+        width: 480px;
+    }
+
+    100% {
+        opacity: 0;
+        width: 480px;
+    }
 }
 
 .side {
@@ -18,66 +51,67 @@
         }
 
         ul {
-            padding: 0;
-            margin: 0;
-            list-style-type: none;
-            list-style-position: inside;
+            display: inline-block;
+
             position: absolute;
-            top: 40px;
+            top: $header-height * 0.13;
             right: 40px;
             width: 165px;
-            display: inline-block;
+
+            padding: 0;
+            margin: 0;
+
+            list-style-type: none;
+            list-style-position: inside;
 
             &:after {
                 content: " ";
                 z-index: 2000;
                 display: block;
+
                 position: relative;
                 top: 199px;
                 bottom: 0;
                 left: 0;
+
                 width: 0;
-                margin-left: -356px;
                 height: 2px;
+
+                margin-left: -356px;
+
                 background: #dbbd68;
+
                 animation: bar 10s linear infinite;
             }
-        }
 
-        li {
-            &:nth-child(1) a {
-                background-image: url(/assets/featured.png);
-                animation: slide-1 30s infinite;
-            }
+            li {
+                @for $i from 1 through $count {
+                    &:nth-child(#{$i}) a {
+                        &:hover {
+                            border-color: $primary;
+                        }
 
-            &:nth-child(2) a {
-                background-image: url(/assets/featured2.png);
-                animation: slide-2 30s infinite;
-            }
+                        display: inline-block;
 
-            &:nth-child(3) a {
-                background-image: url(/assets/featured3.png);
-                animation: slide-3 30s infinite;
-            }
+                        position: absolute;
+                        right: 40px;
+                        top: 35px;
 
-            a {
-                &:hover {
-                    border-color: $gold;
+                        width: 480px;
+                        height: 165px;
+
+                        padding: 0;
+                        margin: 0;
+
+                        background-size: contain;
+                        background: url("/assets/featured#{$i}.png") no-repeat center;
+                        animation: slide-#{$i} 30s infinite;
+
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                        transition-duration: 0s;
+                        transition: border .31s cubic-bezier(0, 0.74, 0.58, 1);
+                    }
                 }
-
-                position: absolute;
-                right: 40px;
-                top: 35px;
-                display: inline-block;
-                width: 480px;
-                height: 165px;
-                padding: 0;
-                margin: 0;
-                background-size: contain;
-                background: black no-repeat center;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                transition-duration: 0s;
-                transition: border .31s cubic-bezier(0, 0.74, 0.58, 1);
             }
         }
     }

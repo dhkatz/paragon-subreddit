@@ -1,131 +1,64 @@
 /* NAVIGATION BAR ICONS */
+$icons: (
+  'discord': 'Join us on Discord for community discussion!',
+  'calendar': 'View the community calendar for upcoming events!',
+  'faq': 'Frequently asked questions by the community.'
+);
 
 #header .tabmenu {
   padding-left: 215px;
 }
 
-.side blockquote p:nth-child(1) {
-  a {
-    position: absolute;
-    top: 316px !important;
-    left: 430px !important;
-    right: 0 !important;
-    width: 32px;
-    height: 32px;
-    background: url(/assets/discord.png) no-repeat !important;
-    border: none;
-
-    &:hover {
-      text-decoration: none;
+.side blockquote {
+  /* Z-INDEX FIX FOR FEATURED AND NAVIGATION ICONS */
+  &:last-of-type {
+    a {
+      z-index: 1337;
     }
   }
 
-  &:before {
-    content: 'Join us on Discord for community discussion!';
-    background: black;
-    background: rgba(0, 0, 0, 0.85);
-    color: $gold;
-    border: 1px solid $gold;
-    text-transform: uppercase;
-    position: absolute;
-    top: 265px;
-    left: 290px;
-    padding: 10px 20px;
-    z-index: 1337;
-    border-radius: 3px;
-    font-size: 11px;
-    opacity: 0;
-    transition: top 0.3s, opacity 0.3s;
-  }
+  $keys: map-keys($icons);
+  @for $i from 1 through length($keys) {
+    p:nth-child(#{$i}) {
+      a {
+        position: absolute;
+        top: $header-height + 16 !important;
+        left: 430px + ($i - 1) * 60 !important;
+        right: 0 !important;
+        width: 32px;
+        height: 32px;
+        background: url("/assets/#{nth($keys, $i)}.png");
+        border: none;
 
-  &:hover {
-    &:before {
-      opacity: 1;
-      top: 255px;
-    }
-  }
-}
+        &:hover {
+          text-decoration: none;
+        }
+      }
 
-.side blockquote p:nth-child(2) {
-  a {
-    position: absolute;
-    top: 314px !important;
-    left: 490px !important;
-    right: 0 !important;
-    width: 32px;
-    height: 32px;
-    background: url(/assets/calendar.png) no-repeat;
-    border: none;
+      &:before {
+        content: map-get($icons, nth($keys, $i));
+        background: black;
+        background: rgba(0, 0, 0, 0.85);
+        color: $primary;
+        border: 1px solid $primary;
+        text-transform: uppercase;
+        position: absolute;
+        top: 265px;
+        left: 290px + ($i - 1) * 50;
+        padding: 10px 20px;
+        z-index: 1337;
+        border-radius: 3px;
+        font-size: 11px;
+        opacity: 0;
+        transition: top 0.3s, opacity 0.3s;
+      }
 
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  &:before {
-    content: 'View the community calendar for upcoming events!';
-    background: black;
-    background: rgba(0, 0, 0, 0.85);
-    color: $gold;
-    border: 1px solid $gold;
-    text-transform: uppercase;
-    position: absolute;
-    top: 265px;
-    left: 340px;
-    padding: 10px 20px;
-    z-index: 1337;
-    border-radius: 3px;
-    font-size: 11px;
-    opacity: 0;
-    transition: top 0.3s, opacity 0.3s;
-  }
-
-  &:hover {
-    &:before {
-      opacity: 1;
-      top: 255px;
-    }
-  }
-}
-
-.side blockquote p:nth-child(3) {
-  a {
-    position: absolute;
-    top: 316px !important;
-    left: 550px !important;
-    right: 0 !important;
-    width: 32px;
-    height: 32px;
-    background: url(/assets/faq.png) no-repeat;
-    border: none;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  &:before {
-    content: 'Frequently asked questions by the community.';
-    background: black;
-    background: rgba(0, 0, 0, 0.85);
-    color: $gold;
-    border: 1px solid $gold;
-    text-transform: uppercase;
-    position: absolute;
-    top: 265px;
-    left: 400px;
-    padding: 10px 20px;
-    z-index: 1337;
-    border-radius: 3px;
-    font-size: 11px;
-    opacity: 0;
-    transition: top 0.3s, opacity 0.3s;
-  }
-
-  &:hover {
-    &:before {
-      opacity: 1;
-      top: 255px;
+      &:hover {
+        &:before {
+          opacity: 1;
+          top: 255px;
+        }
+      }
     }
   }
 }

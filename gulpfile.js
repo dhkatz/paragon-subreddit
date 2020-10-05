@@ -3,7 +3,7 @@ const { task, src, dest, watch, series } = require('gulp');
 
 const sass = require('gulp-sass');
 const mash = require('gulp-concat-css');
-const csso = require('gulp-csso');
+const clean = require('gulp-clean-css');
 const replace = require('gulp-replace');
 const autoprefixer = require('gulp-autoprefixer');
 
@@ -16,6 +16,8 @@ const fetch = require('node-fetch').default;
 const cheerio = require('cheerio');
 const snoowrap = require('snoowrap');
 
+sass.compiler = require('sass')
+
 task('build', () => {
   return src('src/theme.scss')
     .pipe(sass())
@@ -24,8 +26,8 @@ task('build', () => {
     .pipe(replace(/(\.\.[\/]?)*\/assets\/([\w-]+)\.(png|jpg)/g, '%%$2%%'))
     .pipe(dest('./build'))
     .pipe(mash('theme.min.css'))
-    .pipe(csso())
-    .pipe(dest('./build'))
+    .pipe(clean({ level: { 2: { all: true } } }))
+    .pipe(dest('./build'));
 });
 
 task('serve:scss', () => {
@@ -36,7 +38,7 @@ task('serve:scss', () => {
     .pipe(replace(/((\.\.[\/]?)*\/assets)(\/([\w-]+)\.(png|jpg))/g, '$3'))
     .pipe(dest('./assets/css'))
     .pipe(mash('theme.min.css'))
-    .pipe(csso())
+    .pipe(clean({ level: { 2: { all: true } } }))
     .pipe(dest('./assets/css'))
     .pipe(browserSync.stream());
 });
@@ -74,11 +76,9 @@ task('publish', series(task('build'), async () => {
   });
 
   const subreddit = await reddit.getSubreddit(config.options.subreddit).fetch();
-  const css = fs.readFileSync('./build/theme.css').toString();
+  const css = fs.readFileSync('./build/theme.min.css').toString();
 
   const data = await reddit.oauthRequest({ uri: `/r/${config.options.subreddit}/about/stylesheet` });
-
-  console.log(css.split('\n').length);
 
   if (config.options.backup) {
     const writeFile = util.promisify(fs.writeFile)
@@ -112,9 +112,12 @@ task('publish', series(task('build'), async () => {
       const ext = fs.existsSync(`${assets}/${name}.png`) ? 'png' : 'jpg';
 
       console.log(`\tUploading '${name}.${ext}'...`);
-      return await subreddit.uploadStylesheetImage({
-        name, file: path.join(process.cwd(), `./assets/${name}.${ext}`)
-      })
+
+      await subreddit.uploadStylesheetImage({
+        name, file: path.join(process.cwd(), `./assets/${name}.${ext}`), imageType: ext
+      });
+
+      console.log(`\tUploaded '${name}.${ext}!'`);
     }));
   }
 

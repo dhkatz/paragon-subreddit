@@ -29,7 +29,7 @@
   font-weight: normal;
   text-transform: uppercase;
   color: white;
-  background: $gold;
+  background: $primary;
   border: none;
   border-radius: 0;
   position: relative;
@@ -37,7 +37,7 @@
   letter-spacing: 1px;
 
   &:hover {
-    background: lighten($gold, 10%);
+    background: lighten($primary, 10%);
   }
 }
 
@@ -51,7 +51,7 @@
     background-position: 0px -100px;
   }
   &:before {
-    color: $gold;
+    color: $primary;
   }
 }
 
@@ -99,17 +99,17 @@
 
 .linkflair-question {
   .linkflairlabel {
-    background: $light-purple;
+    background: #a162ba;
 
     &:hover {
-      background: lighten($light-purple, 30%);
+      background: lighten(#a162ba, 30%);
     }
   }
   .thumbnail {
     background-position: 0px -150px;
   }
   &:before {
-    color: $light-purple;
+    color: #a162ba;
   }
 }
 
@@ -173,7 +173,7 @@
 }
 
 .flair-epic {
-  background-position: -50px 0;
+  background-position: -25px 0;
 }
 
 .flair-hero-gideon {
@@ -666,4 +666,512 @@
 
 .flair-npc-prime {
   background-position: -50px -50px !important;
+}
+
+.side {
+  .tagline {
+    .userattrs {
+      visibility: visible !important;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    .flair-epic {
+      background-position: -25px 0;
+    }
+
+    .flair-hero-gideon {
+      background-position: -50px 0;
+    }
+
+    .flair-hero-sparrow {
+      background-position: -75px 0;
+    }
+
+    .flair-hero-muriel {
+      background-position: -100px 0;
+    }
+
+    .flair-hero-feng {
+      background-position: -125px 0;
+    }
+
+    .flair-hero-steel {
+      background-position: -150px 0;
+    }
+
+    .flair-hero-gadget {
+      background-position: -175px 0;
+    }
+
+    .flair-hero-kallari {
+      background-position: -200px 0;
+    }
+
+    .flair-hero-dekker {
+      background-position: -225px 0;
+    }
+
+    .flair-hero-murdock {
+      background-position: 0 -25px;
+    }
+
+    .flair-hero-twinblast {
+      background-position: -25px -25px;
+    }
+
+    .flair-hero-rampage {
+      background-position: -50px -25px;
+    }
+
+    .flair-hero-howitzer {
+      background-position: -75px -25px;
+    }
+
+    .flair-hero-grux {
+      background-position: -100px -25px;
+    }
+
+    .flair-hero-sevarog {
+      background-position: -125px -25px;
+    }
+
+    .flair-hero-iggy {
+      background-position: -150px -25px;
+    }
+
+    .flair-hero-grim {
+      background-position: -175px -25px;
+    }
+
+    .flair-hero-riktor {
+      background-position: -200px -25px;
+    }
+
+    .flair-hero-khaimera {
+      background-position: -225px -25px;
+    }
+
+    .flair-hero-greystone {
+      background-position: 0 -50px;
+    }
+
+    .flair-hero-the-fey {
+      background-position: -25px -50px;
+    }
+
+    .flair-hero-narbash {
+      background-position: -50px -50px;
+    }
+
+    .flair-hero-lt-belica {
+      background-position: -75px -50px;
+    }
+
+    .flair-hero-kwang {
+      background-position: -100px -50px;
+    }
+
+    .flair-hero-countess {
+      background-position: -125px -50px;
+    }
+
+    .flair-hero-crunch {
+      background-position: -150px -50px;
+    }
+
+    .flair-hero-serath {
+      background-position: -175px -50px;
+    }
+
+    .flair-hero-aurora {
+      background-position: -200px -50px;
+    }
+
+    .flair-hero-shinbi {
+      background-position: -225px -50px;
+    }
+
+    .flair-hero-yin {
+      background-position: 0 -75px;
+    }
+
+    .flair-hero-morigesh {
+      background-position: -25px -75px;
+    }
+
+    .flair-hero-revenant {
+      background-position: -50px -75px;
+    }
+
+    .flair-hero-phase {
+      background-position: -75px -75px;
+    }
+
+    .flair-hero-wukong {
+      background-position: -100px -75px;
+    }
+
+    .flair-hero-wraith {
+      background-position: -125px -75px;
+    }
+
+    .flair-hero-zinx {
+      background-position: -150px -75px;
+    }
+
+    .flair-hero-drongo {
+      background-position: -175px -75px;
+    }
+
+    .flair-hero-terra {
+      background-position: -200px -75px;
+    }
+
+    .flair-challenger-gideon {
+      background-position: -50px 0 !important;
+    }
+
+    .flair-challenger-sparrow {
+      background-position: -75px 0 !important;
+    }
+
+    .flair-challenger-muriel {
+      background-position: -100px 0 !important;
+    }
+
+    .flair-challenger-feng {
+      background-position: -125px 0 !important;
+    }
+
+    .flair-challenger-steel {
+      background-position: -150px 0 !important;
+    }
+
+    .flair-challenger-gadget {
+      background-position: -175px 0 !important;
+    }
+
+    .flair-challenger-kallari {
+      background-position: -200px 0 !important;
+    }
+
+    .flair-challenger-dekker {
+      background-position: -225px 0 !important;
+    }
+
+    .flair-challenger-murdock {
+      background-position: 0 -25px !important;
+    }
+
+    .flair-challenger-twinblast {
+      background-position: -25px -25px !important;
+    }
+
+    .flair-challenger-rampage {
+      background-position: -50px -25px !important;
+    }
+
+    .flair-challenger-howitzer {
+      background-position: -75px -25px !important;
+    }
+
+    .flair-challenger-grux {
+      background-position: -100px -25px !important;
+    }
+
+    .flair-challenger-sevarog {
+      background-position: -125px -25px !important;
+    }
+
+    .flair-challenger-iggy {
+      background-position: -150px -25px !important;
+    }
+
+    .flair-challenger-grim {
+      background-position: -175px -25px !important;
+    }
+
+    .flair-challenger-riktor {
+      background-position: -200px -25px !important;
+    }
+
+    .flair-challenger-khaimera {
+      background-position: -225px -25px !important;
+    }
+
+    .flair-challenger-greystone {
+      background-position: 0 -50px !important;
+    }
+
+    .flair-challenger-the-fey {
+      background-position: -25px -50px !important;
+    }
+
+    .flair-challenger-narbash {
+      background-position: -50px -50px !important;
+    }
+
+    .flair-challenger-lt-belica {
+      background-position: -75px -50px !important;
+    }
+
+    .flair-challenger-kwang {
+      background-position: -100px -50px !important;
+    }
+
+    .flair-challenger-countess {
+      background-position: -125px -50px !important;
+    }
+
+    .flair-challenger-crunch {
+      background-position: -150px -50px !important;
+    }
+
+    .flair-challenger-serath {
+      background-position: -175px -50px !important;
+    }
+
+    .flair-challenger-aurora {
+      background-position: -200px -50px !important;
+    }
+
+    .flair-challenger-shinbi {
+      background-position: -225px -50px !important;
+    }
+
+    .flair-challenger-yin {
+      background-position: 0 -75px !important;
+    }
+
+    .flair-challenger-morigesh {
+      background-position: -25px -75px !important;
+    }
+
+    .flair-challenger-revenant {
+      background-position: -50px -75px !important;
+    }
+
+    .flair-challenger-phase {
+      background-position: -75px -75px !important;
+    }
+
+    .flair-challenger-wukong {
+      background-position: -100px -75px !important;
+    }
+
+    .flair-challenger-wraith {
+      background-position: -125px -75px !important;
+    }
+
+    .flair-challenger-zinx {
+      background-position: -150px -75px !important;
+    }
+
+    .flair-challenger-drongo {
+      background-position: -175px -75px !important;
+    }
+
+    .flair-challenger-terra {
+      background-position: -200px -75px !important;
+    }
+
+    .flair-master-gideon {
+      background-position: -50px 0 !important;
+    }
+
+    .flair-master-sparrow {
+      background-position: -75px 0 !important;
+    }
+
+    .flair-master-muriel {
+      background-position: -100px 0 !important;
+    }
+
+    .flair-master-feng {
+      background-position: -125px 0 !important;
+    }
+
+    .flair-master-steel {
+      background-position: -150px 0 !important;
+    }
+
+    .flair-master-gadget {
+      background-position: -175px 0 !important;
+    }
+
+    .flair-master-kallari {
+      background-position: -200px 0 !important;
+    }
+
+    .flair-master-dekker {
+      background-position: -225px 0 !important;
+    }
+
+    .flair-master-murdock {
+      background-position: 0 -25px !important;
+    }
+
+    .flair-master-twinblast {
+      background-position: -25px -25px !important;
+    }
+
+    .flair-master-rampage {
+      background-position: -50px -25px !important;
+    }
+
+    .flair-master-howitzer {
+      background-position: -75px -25px !important;
+    }
+
+    .flair-master-grux {
+      background-position: -100px -25px !important;
+    }
+
+    .flair-master-sevarog {
+      background-position: -125px -25px !important;
+    }
+
+    .flair-master-iggy {
+      background-position: -150px -25px !important;
+    }
+
+    .flair-master-grim {
+      background-position: -175px -25px !important;
+    }
+
+    .flair-master-riktor {
+      background-position: -200px -25px !important;
+    }
+
+    .flair-master-khaimera {
+      background-position: -225px -25px !important;
+    }
+
+    .flair-master-greystone {
+      background-position: 0 -50px !important;
+    }
+
+    .flair-master-the-fey {
+      background-position: -25px -50px !important;
+    }
+
+    .flair-master-narbash {
+      background-position: -50px -50px !important;
+    }
+
+    .flair-master-lt-belica {
+      background-position: -75px -50px !important;
+    }
+
+    .flair-master-kwang {
+      background-position: -100px -50px !important;
+    }
+
+    .flair-master-countess {
+      background-position: -125px -50px !important;
+    }
+
+    .flair-master-crunch {
+      background-position: -150px -50px !important;
+    }
+
+    .flair-master-serath {
+      background-position: -175px -50px !important;
+    }
+
+    .flair-master-aurora {
+      background-position: -200px -50px !important;
+    }
+
+    .flair-master-shinbi {
+      background-position: -225px -50px !important;
+    }
+
+    .flair-master-yin {
+      background-position: 0 -75px !important;
+    }
+
+    .flair-master-morigesh {
+      background-position: -25px -75px !important;
+    }
+
+    .flair-master-revenant {
+      background-position: -50px -75px !important;
+    }
+
+    .flair-master-phase {
+      background-position: -75px -75px !important;
+    }
+
+    .flair-master-wukong {
+      background-position: -100px -75px !important;
+    }
+
+    .flair-master-wraith {
+      background-position: -125px -75px !important;
+    }
+
+    .flair-master-zinx {
+      background-position: -150px -75px !important;
+    }
+
+    .flair-master-drongo {
+      background-position: -175px -75px !important;
+    }
+
+    .flair-master-terra {
+      background-position: -200px -75px !important;
+    }
+
+    .flair-npc-melee {
+      background-position: 0 0 !important;
+    }
+
+    .flair-npc-ranged {
+      background-position: -25px 0 !important;
+    }
+
+    .flair-npc-siege {
+      background-position: -50px 0 !important;
+    }
+
+    .flair-npc-super {
+      background-position: -75px 0 !important;
+    }
+
+    .flair-npc-jungle {
+      background-position: -100px 0 !important;
+    }
+
+    .flair-npc-green {
+      background-position: -125px 0 !important;
+    }
+
+    .flair-npc-purple {
+      background-position: -150px 0 !important;
+    }
+
+    .flair-npc-blue {
+      background-position: -175px 0 !important;
+    }
+
+    .flair-npc-black {
+      background-position: -200px 0 !important;
+    }
+
+    .flair-npc-red {
+      background-position: -225px 0 !important;
+    }
+
+    .flair-npc-raptor {
+      background-position: 0 -25px !important;
+    }
+
+    .flair-npc-prime {
+      background-position: -25px -25px !important;
+    }
+  }
 }

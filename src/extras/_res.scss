@@ -83,27 +83,32 @@ Comments
 Header
  */
 
-.res #RESSubredditGroupDropdown .RESShortcutsCurrentSub a, .res #sr-header-area a.RESShortcutsCurrentSub {
-  color: white !important;
-}
-.res #RESShortcutsEditContainer {
-  margin-right: 430px;
-  top: 3px;
-  background: none;
-  #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
+.res {
+  #RESSubredditGroupDropdown .RESShortcutsCurrentSub a, .res #sr-header-area a.RESShortcutsCurrentSub {
+    color: white !important;
+  }
+
+  #RESShortcutsEditContainer {
+    margin-right: 430px;
+    top: 3px;
     background: none;
-    opacity: 0.5;
-    color: white;
-    &:hover {
-      opacity: 1.0;
+    #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
+      background: none;
+      opacity: 0.5;
+      color: white;
+      &:hover {
+        opacity: 1.0;
+      }
     }
   }
-}
-.res #RESShortcutsViewport {
-  margin-right: 520px;
-}
-.res #userbarToggle {
-  background: none;
-  color: rgba(255,255,255,0.5);
-  border: none;
+
+  #RESShortcutsViewport {
+    margin-right: 520px;
+  }
+
+  #userbarToggle {
+    background: none;
+    color: rgba(255,255,255,0.5);
+    border: none;
+  }
 }

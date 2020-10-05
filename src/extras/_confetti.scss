@@ -1,3 +1,9 @@
+/**
+Add submission IDs here to have confetti backgrounds on them!
+ */
+
+$special: ('6d7xok');
+
 @keyframes confetti {
   0% {
     background-position: 0 0, 0 0, 0 0, 0px -180px;
@@ -7,24 +13,22 @@
   }
 }
 
-/**
-Add submission IDs here to have confetti backgrounds on them!
- */
+@each $id in $special {
+  #thing_t3_#{$id} {
+    &:hover {
+      background-image: url(/assets/confetti.png), url(/assets/confetti.png), url(/assets/confetti.png) !important;
+      background-size: 250px 250px, 500px 500px, 125px 125px, 1920px 596px;
+      background-position: 0 0, 0 0, 0 0, 0px -180px;
+      background-repeat: repeat, repeat, repeat, no-repeat;
+      animation: confetti 10s linear infinite;
+      transition: all 500ms linear;
+    }
 
-#thing_t3_6d7xok {
-  &:hover {
-    background-image: url(/assets/confetti.png), url(/assets/confetti.png), url(/assets/confetti.png) !important;
-    background-size: 250px 250px, 500px 500px, 125px 125px, 1920px 596px;
-    background-position: 0 0, 0 0, 0 0, 0px -180px;
-    background-repeat: repeat, repeat, repeat, no-repeat;
-    animation: confetti 10s linear infinite;
-    transition: all 500ms linear;
-  }
-
-  .usertext-body .md {
-    background: #fff !important;
-    padding: 10px 20px;
-    border-top: 1px solid #eee !important;
-    border-bottom: 1px solid #eee !important
+    .usertext-body .md {
+      background: #fff !important;
+      padding: 10px 20px;
+      border-top: 1px solid #eee !important;
+      border-bottom: 1px solid #eee !important
+    }
   }
 }
