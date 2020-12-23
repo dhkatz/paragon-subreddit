@@ -1,7 +1,7 @@
 {
   "name": "paragon-subreddit",
   "private": true,
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "/r/Paragon Subreddit CSS - Managed by /u/JejuneKai and /u/MCiLuZiioNz",
   "dependencies": {},
   "devDependencies": {
