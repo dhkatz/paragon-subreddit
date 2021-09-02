@@ -1,8 +1,11 @@
 /* NAVIGATION BAR ICONS */
+
+@import "../utilities/variables";
+
 $icons: (
-  'discord': 'Join us on Discord for community discussion!',
-  'calendar': 'View the community calendar for upcoming events!',
-  'faq': 'Frequently asked questions by the community.'
+  "discord": "Join us on Discord for community discussion!",
+  "calendar": "View the community calendar for upcoming events!",
+  "faq": "Frequently asked questions by the community.",
 );
 
 #header .tabmenu {

@@ -1,429 +1,433 @@
-@import 'src/utilities/variables';
+@import "../utilities/variables";
 
 .side {
-    margin: 20px;
-    background: none;
+  margin: 20px;
+  background: none;
 
-    .spacer {
-        margin: 0;
+  .spacer {
+    margin: 0;
 
-        .premium-banner-outer {
-            margin-top: 20px !important;
-        }
-
-        &.no-icon {
-            display: none;
-        }
+    .premium-banner-outer {
+      margin-top: 20px !important;
     }
 
-    .login-form-side {
-        background: #FFF;
-        border: none;
-        box-shadow: $shadow;
-        margin-bottom: 20px;
+    &.no-icon {
+      display: none;
+    }
+  }
 
-        .submit {
-            padding-right: 117px;
-            padding-bottom: 8px;
-        }
+  .login-form-side {
+    background: #fff;
+    border: none;
+    box-shadow: $shadow;
+    margin-bottom: 20px;
 
-        #remember-me {
-            padding-left: 29px;
-        }
+    .submit {
+      padding-right: 117px;
+      padding-bottom: 8px;
     }
 
-    .linkinfo {
-        background: white;
-        border: none;
-        border-radius: 0;
-        box-shadow: $shadow;
-        margin-bottom: 20px;
-        padding: 20px;
-        font-size: 14px;
-
-        .date {
-            color: #999;
-            font-size: 12px;
-
-            span {
-                display: none;
-            }
-
-            time {
-                font-weight: bold;
-
-                &:before {
-                    content: 'Submitted ';
-                    font-family: Arial, sans-serif;
-                    font-size: 12px;
-                    font-weight: normal;
-                    color: #999;
-                }
-            }
-        }
-
-        .score {
-            margin-top: 5px;
-        }
-
-        .totalvotes {
-            color: #999;
-        }
-
-        .shortlink {
-            border-top: 1px solid #eeeeee;
-            padding-top: 15px;
-            margin-top: 15px;
-            font-size: 0;
-            color: white;
-
-            input {
-                border: 1px dotted #cccccc;
-                font-size: 12px;
-                padding: 5px;
-                width: 100%;
-                box-sizing: border-box;
-            }
-        }
+    #remember-me {
+      padding-left: 29px;
     }
+  }
 
-    .titlebox {
-        font-size: 14px;
-        margin-bottom: 20px;
+  .linkinfo {
+    background: white;
+    border: none;
+    border-radius: 0;
+    box-shadow: $shadow;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 14px;
 
-        .redditname {
-            margin-bottom: 15px;
+    .date {
+      color: #999;
+      font-size: 12px;
 
-            a {
-                text-transform: capitalize;
-            }
+      span {
+        display: none;
+      }
 
-            &:before {
-                content: '/r/';
-            }
-        }
-
-        .fancy-toggle-button {
-            display: block;
-            text-align: center;
-            text-transform: capitalize;
-            font-weight: normal;
-            margin: 20px 0 10px;
-
-            .remove {
-                background: white;
-                border: 1px solid #ddd;
-                border-radius: 0;
-                color: #999;
-
-                &:hover {
-                    border: 1px solid #999;
-                }
-
-                &:after {
-                    font-size: 12px;
-                    font-weight: bold;
-                    content: ':(';
-                    transform: rotate(90deg);
-                    display: inline-block;
-                    margin-left: 10px;
-                }
-            }
-
-            .add {
-                background: $primary;
-                color: white;
-                border-color: $primary;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-
-                &:hover {
-                    background: lighten($primary, 10%);
-                }
-
-                &:after {
-                    content: ' to /r/Paragon';
-                    text-transform: none;
-                }
-            }
-
-            .remove, .add {
-                box-sizing: border-box;
-                font-size: 12px;
-                width: 100%;
-                border-radius: 0;
-                padding: 10px;
-                transition: background-color 0.2s;
-                font-weight: normal;
-
-                &.active {
-                    display: block;
-                }
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-        }
-
-        .RESshortcut, .REStoggle {
-            display: inline-block;
-            width: 49%;
-            background: white !important;
-            border: 1px solid #ddd;
-            border-radius: 0;
-            box-sizing: border-box;
-            color: #999999;
-            padding: 10px 5px;
-            margin: 0;
-            font-size: 12px;
-            font-weight: normal;
-            text-transform: capitalize;
-            transition: border 0.2s;
-            text-align: center;
-
-            &:hover {
-                border-color: #999;
-            }
-        }
-
-        .RESshortcut {
-            margin: 0 2% 0 0;
-        }
-    }
-
-    .subscribers {
-        margin-top: 20px;
-        display: block;
-        font-size: 16px;
+      time {
         font-weight: bold;
-        color: #555;
-
-        .word {
-            text-indent: -9999px;
-            font-size: 0;
-
-            &:before {
-                content: 'Heroes';
-                font-size: 16px;
-                position: relative;
-            }
-        }
-    }
-
-    .users-online {
-        color: #cccccc;
-        font-size: 14px;
 
         &:before {
-            display: none;
+          content: "Submitted ";
+          font-family: Arial, sans-serif;
+          font-size: 12px;
+          font-weight: normal;
+          color: #999;
         }
-
-        .word {
-            font-size: 0;
-
-            &:after {
-                content: 'in queue';
-                font-size: 14px;
-            }
-        }
+      }
     }
 
-    .leavemoderator, .leavecontributor-button {
-        display: none;
+    .score {
+      margin-top: 5px;
     }
 
-    .tagline {
-        position: relative;
-        margin-top: 20px;
-        margin-left: 0;
-        min-height: 25px;
-        font-size: 14px;
-        padding-top: 3px;
-
-        .author {
-            margin-left: 35px;
-        }
-
-        .flair {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-size: 250px;
-            width: 25px;
-            height: 25px;
-        }
+    .totalvotes {
+      color: #999;
     }
 
-    .flairselector {
-        margin-top: 20px;
-        max-width: 250px;
-        position: static !important;
-    }
+    .shortlink {
+      border-top: 1px solid #eeeeee;
+      padding-top: 15px;
+      margin-top: 15px;
+      font-size: 0;
+      color: white;
 
-    .dropchoices {
-        white-space: normal;
-    }
-
-    .flairoptionpane {
-        .author {
-            display: none;
-        }
-
-        .flair {
-            position: inherit;
-        }
-
-        ul {
-            overflow: visible;
-        }
-
-        li {
-            border: none;
-            display: inline-block !important;
-            padding: 0;
-            margin: 5px;
-            max-width: 25px;
-        }
-    }
-
-    .flairtoggle {
+      input {
+        border: 1px dotted #cccccc;
         font-size: 12px;
+        padding: 5px;
+        width: 100%;
+        box-sizing: border-box;
+      }
     }
+  }
 
-    .title h1 {
+  .titlebox {
+    font-size: 14px;
+    margin-bottom: 20px;
+
+    .redditname {
+      margin-bottom: 15px;
+
+      a {
         text-transform: capitalize;
-        color: $foreground;
+      }
+
+      &:before {
+        content: "/r/";
+      }
     }
 
-    .md h2 {
-        font-size: 18px;
-        font-weight: bold;
-    }
+    .fancy-toggle-button {
+      display: block;
+      text-align: center;
+      text-transform: capitalize;
+      font-weight: normal;
+      margin: 20px 0 10px;
 
-    .morelink {
+      .remove {
         background: white;
-        box-shadow: $shadow;
-        border: none;
-        border-left: 4px solid $primary;
-        text-align: center;
-        font-size: 14px;
-        height: auto;
-        line-height: 14px;
+        border: 1px solid #ddd;
+        border-radius: 0;
+        color: #999;
 
         &:hover {
-            a {
-                color: $foreground;
-            }
+          border: 1px solid #999;
         }
-
-        a {
-            display: inline-block;
-            padding: 15px 10px;
-            color: $primary;
-            text-transform: uppercase;
-            text-decoration: none;
-            box-sizing: border-box;
-        }
-
-        .nub {
-            display: none;
-        }
-    }
-
-    .submit-text {
-        display: none;
-    }
-
-    .titlebox {
-        margin-top: 20px;
-        background: white;
-        padding: 20px;
-        box-shadow: $shadow;
-
-        .bottom {
-            display: none;
-        }
-    }
-
-    .usertext {
-        border-top: 1px solid #cccccc;
-        margin-top: 20px;
-    }
-
-    #moderation_tools {
-        margin-top: 20px;
-
-        ul.content {
-            margin: 10px 0 20px;
-            border: none;
-            box-shadow: $shadow;
-            padding: 20px;
-            font-size: 14px;
-        }
-    }
-
-    .sidecontentbox .content {
-        background: white;
-        margin: 10px 0 20px;
-        border: none;
-        box-shadow: $shadow;
-        padding: 20px;
-        font-size: 14px;
-    }
-
-    .sidebox.create {
-        display: none;
-    }
-
-    .account-activity-box {
-        display: none;
-    }
-
-    .gadget {
-        .midcol {
-            width: 20px;
-            margin: 0;
-        }
-
-        .entry {
-            padding: 5px 5px 0 10px;
-        }
-
-        .linkflairlabel {
-            margin-left: 5px;
-        }
-    }
-
-    .dfp-ad-container {
-        background-color: #FFF;
-        border: none;
-        width: 288px;
-        height: 260px;
-        margin-bottom: 20px;
-        padding: 0 0 0 10px !important;
-        box-shadow: $shadow;
 
         &:after {
-            content: "advertisement";
-            text-align: center;
-            display: block;
-            color: #AAA;
-            margin-top: -10px;
+          font-size: 12px;
+          font-weight: bold;
+          content: ":(";
+          transform: rotate(90deg);
+          display: inline-block;
+          margin-left: 10px;
+        }
+      }
+
+      .add {
+        background: $primary;
+        color: white;
+        border-color: $primary;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover {
+          background: lighten($primary, 10%);
         }
 
-        & > div[id$='__container__'] {
-            width: 300px;
-            height: 250px;
-            transform: scale(0.88) translateX(-12px);
+        &:after {
+          content: " to /r/Paragon";
+          text-transform: none;
         }
+      }
+
+      .remove,
+      .add {
+        box-sizing: border-box;
+        font-size: 12px;
+        width: 100%;
+        border-radius: 0;
+        padding: 10px;
+        transition: background-color 0.2s;
+        font-weight: normal;
+
+        &.active {
+          display: block;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
+
+    .RESshortcut,
+    .REStoggle {
+      display: inline-block;
+      width: 49%;
+      background: white !important;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      box-sizing: border-box;
+      color: #999999;
+      padding: 10px 5px;
+      margin: 0;
+      font-size: 12px;
+      font-weight: normal;
+      text-transform: capitalize;
+      transition: border 0.2s;
+      text-align: center;
+
+      &:hover {
+        border-color: #999;
+      }
+    }
+
+    .RESshortcut {
+      margin: 0 2% 0 0;
+    }
+  }
+
+  .subscribers {
+    margin-top: 20px;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+
+    .word {
+      text-indent: -9999px;
+      font-size: 0;
+
+      &:before {
+        content: "Heroes";
+        font-size: 16px;
+        position: relative;
+      }
+    }
+  }
+
+  .users-online {
+    color: #cccccc;
+    font-size: 14px;
+
+    &:before {
+      display: none;
+    }
+
+    .word {
+      font-size: 0;
+
+      &:after {
+        content: "in queue";
+        font-size: 14px;
+      }
+    }
+  }
+
+  .leavemoderator,
+  .leavecontributor-button {
+    display: none;
+  }
+
+  .tagline {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 0;
+    min-height: 25px;
+    font-size: 14px;
+    padding-top: 3px;
+
+    .author {
+      margin-left: 35px;
+    }
+
+    .flair {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-size: 250px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .flairselector {
+    margin-top: 20px;
+    max-width: 250px;
+    position: static !important;
+  }
+
+  .dropchoices {
+    white-space: normal;
+  }
+
+  .flairoptionpane {
+    .author {
+      display: none;
+    }
+
+    .flair {
+      position: inherit;
+    }
+
+    ul {
+      overflow: visible;
+    }
+
+    li {
+      border: none;
+      display: inline-block !important;
+      padding: 0;
+      margin: 5px;
+      max-width: 25px;
+    }
+  }
+
+  .flairtoggle {
+    font-size: 12px;
+  }
+
+  .title h1 {
+    text-transform: capitalize;
+    color: $foreground;
+  }
+
+  .md h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .morelink {
+    background: white;
+    box-shadow: $shadow;
+    border: none;
+    border-left: 4px solid $primary;
+    text-align: center;
+    font-size: 14px;
+    height: auto;
+    line-height: 14px;
+
+    &:hover {
+      a {
+        color: $foreground;
+      }
+    }
+
+    a {
+      display: inline-block;
+      padding: 15px 10px;
+      color: $primary;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .nub {
+      display: none;
+    }
+  }
+
+  .submit-text {
+    display: none;
+  }
+
+  .titlebox {
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    box-shadow: $shadow;
+
+    .bottom {
+      display: none;
+    }
+  }
+
+  .usertext {
+    border-top: 1px solid #cccccc;
+    margin-top: 20px;
+  }
+
+  #moderation_tools {
+    margin-top: 20px;
+
+    ul.content {
+      margin: 10px 0 20px;
+      border: none;
+      box-shadow: $shadow;
+      padding: 20px;
+      font-size: 14px;
+    }
+  }
+
+  .sidecontentbox .content {
+    background: white;
+    margin: 10px 0 20px;
+    border: none;
+    box-shadow: $shadow;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .sidebox.create {
+    display: none;
+  }
+
+  .account-activity-box {
+    display: none;
+  }
+
+  .gadget {
+    .midcol {
+      width: 20px;
+      margin: 0;
+    }
+
+    .entry {
+      padding: 5px 5px 0 10px;
+    }
+
+    .linkflairlabel {
+      margin-left: 5px;
+    }
+  }
+
+  .dfp-ad-container {
+    background-color: #fff;
+    border: none;
+    width: 288px;
+    height: 260px;
+    margin-bottom: 20px;
+    padding: 0 0 0 10px !important;
+    box-shadow: $shadow;
+
+    &:after {
+      content: "advertisement";
+      text-align: center;
+      display: block;
+      color: #aaa;
+      margin-top: -10px;
+    }
+
+    & > div[id$="__container__"] {
+      width: 300px;
+      height: 250px;
+      transform: scale(0.88) translateX(-12px);
+    }
+  }
 }
 
-.sponsorshipbox, #ad_main {
-    margin-bottom: 15px;
+.sponsorshipbox,
+#ad_main {
+  margin-bottom: 15px;
 }
 
 #ad_main_top {
-    margin-bottom: 20px !important;
+  margin-bottom: 20px !important;
 }

@@ -1,5 +1,5 @@
-@import '../utilities/variables';
-@import '../utilities/contrast';
+@import "../utilities/variables";
+@import "../utilities/contrast";
 
 /* --- Reddit Enhancement Suite Fixes --- */
 
@@ -29,7 +29,7 @@ body {
       background-color: $secondary;
 
       h1 a {
-        color: a11y-color(gray, $secondary, 'A');
+        color: a11y-color(gray, $secondary, "A");
       }
 
       form.toggle {
@@ -37,14 +37,15 @@ body {
       }
 
       .fancy-toggle-button {
-        .add, .remove {
+        .add,
+        .remove {
           background-color: $secondary;
         }
       }
     }
 
     .md {
-      color: a11y-color(gray, $secondary, 'A');
+      color: a11y-color(gray, $secondary, "A");
     }
 
     #moderation_tools .content {

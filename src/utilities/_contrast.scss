@@ -2,7 +2,7 @@
 @use 'sass:color';
 
 // Include our lookup table
-@import 'constants';
+@import "constants";
 
 $white: #fff !default;
 $black: #101010 !default;
@@ -17,7 +17,7 @@ $black: #101010 !default;
 /// @example css - Output
 ///   line-height: 1.5;
 @function strip-unit($value) {
-  @return ($value / ($value * 0 + 1));
+  @return math.div($value, $value * 0 + 1);
 }
 
 /// Helper: Calculate Luminance of a single color
@@ -44,7 +44,7 @@ $black: #101010 !default;
   $red: nth($linear-channel-values, red($color) + 1);
   $green: nth($linear-channel-values, green($color) + 1);
   $blue: nth($linear-channel-values, blue($color) + 1);
-  $calculation: .2126 * $red + .7152 * $green + .0722 * $blue;
+  $calculation: 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue;
   @return $calculation;
 }
 
@@ -70,12 +70,12 @@ $black: #101010 !default;
 @function color-contrast($fg, $bg) {
   $luminance1: luminance($fg) + 0.05;
   $luminance2: luminance($bg) + 0.05;
-  $ratio: $luminance1 / $luminance2;
+  $ratio: math.div($luminance1, $luminance2);
   @if $luminance2 > $luminance1 {
-    $ratio: 1 / $ratio;
+    $ratio: math.div(1, $ratio);
   }
-  // Round to a hundreth because 6.96 should not pass a ratio of 7.0
-  $ratio: round($ratio * 100) / 100;
+  // Round to a hundredth because 6.96 should not pass a ratio of 7.0
+  $ratio: math.div(math.round($ratio * 100), 100);
   @return $ratio;
 }
 
@@ -96,12 +96,12 @@ $black: #101010 !default;
 ///
 @function validate-font-size($size) {
   // If it is already unitless, quickly return it
-  @if unit($size) == '' {
+  @if unit($size) == "" {
     @return $size;
-  } @else if unit($size) == 'px' {
+  } @else if unit($size) == "px" {
     // We expect PX, so strip the value and return it
     @return strip-unit($size);
-  } @else if unit($size) == 'em' or unit($size) == 'rem' {
+  } @else if unit($size) == "em" or unit($size) == "rem" {
     // Need to convert to a pixel value. Let's not overcomplicate it with possible EM inheritence scale factors
     @return strip-unit($size * 16);
   } @else {
@@ -126,10 +126,10 @@ $black: #101010 !default;
 /// @example css - Output
 ///    .sample { get-ratio: 4.5; }
 ///
-@function get-ratio($level: 'AA', $size: 16, $bold: false) {
+@function get-ratio($level: "AA", $size: 16, $bold: false) {
   // Default ratios
   $ratio: 4.5;
-  @if $level == 'AAA' {
+  @if $level == "AAA" {
     $ratio: 7;
   }
 
@@ -142,7 +142,7 @@ $black: #101010 !default;
     // But:
     @if $size >= 19 and $bold == true {
       // Special case: small text but also bold
-      @if $level == 'AAA' {
+      @if $level == "AAA" {
         $ratio: 4.5;
       } @else {
         $ratio: 3;
@@ -151,7 +151,7 @@ $black: #101010 !default;
   } @else {
     // 24 or larger
     $ratio: 3;
-    @if $level == 'AAA' {
+    @if $level == "AAA" {
       $ratio: 4.5;
     }
   }
@@ -242,7 +242,7 @@ $black: #101010 !default;
 ///       color: #d200d2;
 ///     }
 ///
-@function a11y-color($fg, $bg, $level: 'AA', $size: 16, $bold: false) {
+@function a11y-color($fg, $bg, $level: "AA", $size: 16, $bold: false) {
   // Helper: make sure the font size value is acceptable
   $font-size: validate-font-size($size);
   // Helper: With the level, font size, and bold boolean, return the proper target ratio. 3.0, 4.5, or 7.0 expected
@@ -264,12 +264,12 @@ $black: #101010 !default;
     $step: 2%;
 
     // Run through some cases where we want to darken, or use a negative step value
-    @if $fg-lod == 'light' and $bg-lod == 'light' {
+    @if $fg-lod == "light" and $bg-lod == "light" {
       // Both are light colors, darken the fg
-      $step: - $step;
-    } @else if $fg-lod == 'dark' and $bg-lod == 'light' {
+      $step: -$step;
+    } @else if $fg-lod == "dark" and $bg-lod == "light" {
       // bg is light, fg is dark but does not pass, darken more
-      $step: - $step;
+      $step: -$step;
     }
     // Keeping the rest of the logic here, but our default values do not change, so this logic is not needed
     //@else if $fg-lod == 'light' and $bg-lod == 'dark' {
@@ -286,7 +286,7 @@ $black: #101010 !default;
     // This might loop many times depending on the colors
     @while color-contrast($fg, $bg) < $ratio {
       // Scale both the lightness and saturation, but half for saturation
-      $fg: scale-color($fg, $lightness: $step, $saturation: $step/2);
+      $fg: scale-color($fg, $lightness: $step, $saturation: math.div($step, 2));
     }
     @return $fg;
   }

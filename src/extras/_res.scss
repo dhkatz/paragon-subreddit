@@ -1,6 +1,4 @@
-/**
-Content
- */
+/** Content */
 
 .link {
   position: relative;
@@ -10,7 +8,7 @@ Content
     background: none !important;
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 10px;
       right: 10px;
@@ -41,11 +39,13 @@ Comments
 .comments-page {
   .comment {
     position: relative;
-    .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container,
-    .RES-keyNav-activeElement, .RES-keyNav-activeElement .md {
+    .RES-keyNav-activeElement,
+    .RES-keyNav-activeElement .md-container,
+    .RES-keyNav-activeElement,
+    .RES-keyNav-activeElement .md {
       background: none !important;
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         top: 10px;
         right: 10px;
@@ -84,7 +84,8 @@ Header
  */
 
 .res {
-  #RESSubredditGroupDropdown .RESShortcutsCurrentSub a, .res #sr-header-area a.RESShortcutsCurrentSub {
+  #RESSubredditGroupDropdown .RESShortcutsCurrentSub a,
+  .res #sr-header-area a.RESShortcutsCurrentSub {
     color: white !important;
   }
 
@@ -92,12 +93,16 @@ Header
     margin-right: 430px;
     top: 3px;
     background: none;
-    #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
+    #RESShortcutsSort,
+    #RESShortcutsRight,
+    #RESShortcutsLeft,
+    #RESShortcutsAdd,
+    #RESShortcutsTrash {
       background: none;
       opacity: 0.5;
       color: white;
       &:hover {
-        opacity: 1.0;
+        opacity: 1;
       }
     }
   }
@@ -108,7 +113,7 @@ Header
 
   #userbarToggle {
     background: none;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     border: none;
   }
 }

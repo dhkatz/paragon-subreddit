@@ -1,34 +1,34 @@
 #header {
-    overflow: hidden;
+  overflow: hidden;
 
-    &:after {
-        content: '';
-        display: block;
-        background-image: url(/assets/movinghearts.png);
-        position: absolute;
-        top: -150px;
-        left: -50%;
-        min-width: 2400px;
-        height: 1200px;
-        width: 200vw;
-        transform: translateX(-300px) translateY(-300px);
-        animation: snowfall 10s linear infinite;
-        overflow: hidden;
-        margin: 0;
-        opacity: 0.6;
-    }
-    #sr-header-area {
-        z-index: 2;
-    }
-    #header-bottom-left {
-        z-index: 2;
-    }
-    #header-bottom-right {
-        z-index: 2;
-    }
+  &:after {
+    content: "";
+    display: block;
+    background-image: url(/assets/movinghearts.png);
+    position: absolute;
+    top: -150px;
+    left: -50%;
+    min-width: 2400px;
+    height: 1200px;
+    width: 200vw;
+    transform: translateX(-300px) translateY(-300px);
+    animation: snowfall 10s linear infinite;
+    overflow: hidden;
+    margin: 0;
+    opacity: 0.6;
+  }
+  #sr-header-area {
+    z-index: 2;
+  }
+  #header-bottom-left {
+    z-index: 2;
+  }
+  #header-bottom-right {
+    z-index: 2;
+  }
 }
 body {
-    overflow-x: hidden !important;
+  overflow-x: hidden !important;
 }
 
 @keyframes snowfall {
@@ -38,4 +38,6 @@ body {
 }
 
 /* Fixes the header with Reddit's Christmas Snoo */
-#header-img { display: none}
+#header-img {
+  display: none;
+}

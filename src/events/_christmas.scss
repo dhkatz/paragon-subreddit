@@ -2,7 +2,7 @@
   overflow: hidden;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     background-image: url(/assets/movingsnow.png);
     position: absolute;
@@ -40,7 +40,7 @@ body {
 .side blockquote:last-of-type {
   li a {
     &:before {
-      content: '';
+      content: "";
       display: inline-block;
       width: 514px;
       height: 123px;
@@ -69,4 +69,6 @@ body {
 }
 
 /* Fixes the header with Reddit's Christmas Snoo */
-#header-img { display: none}
+#header-img {
+  display: none;
+}

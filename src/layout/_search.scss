@@ -1,34 +1,34 @@
-@import 'src/utilities/variables';
+@import "../utilities/variables";
 
 // Search results page
 .search-page {
-    #search {
-        position: static;
-        display: block;
-        background: none;
-        color: $foreground;
-        input[type="text"] {
-            border: 1px solid #ccc;
-            border-radius: 0;
-        }
-        .search-submit-button.c-btn-primary {
-            background: $primary;
-            border: none;
-            border-radius: 0;
-            padding: 6px 15px 5px;
-            &:hover {
-                background: lighten($primary, 10%);
-            }
-        }
+  #search {
+    position: static;
+    display: block;
+    background: none;
+    color: $foreground;
+    input[type="text"] {
+      border: 1px solid #ccc;
+      border-radius: 0;
     }
-    .searchpane {
-        margin: 0;
-        padding: 20px;
+    .search-submit-button.c-btn-primary {
+      background: $primary;
+      border: none;
+      border-radius: 0;
+      padding: 6px 15px 5px;
+      &:hover {
+        background: lighten($primary, 10%);
+      }
     }
-    .search-result-listing {
-        .search-result-group {
-            padding: 20px;
-            max-width: 100%;
-        }
+  }
+  .searchpane {
+    margin: 0;
+    padding: 20px;
+  }
+  .search-result-listing {
+    .search-result-group {
+      padding: 20px;
+      max-width: 100%;
     }
+  }
 }

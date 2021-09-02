@@ -1,7 +1,4 @@
-$verified: (
-  'SneakyParagon',
-  'Sevrahn'
-);
+$verified: ("SneakyParagon", "Sevrahn");
 
 @each $user in $verified {
   a[href$="user/#{$user}"]:not(.moderator) {

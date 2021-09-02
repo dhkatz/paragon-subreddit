@@ -1,37 +1,36 @@
-@import 'src/utilities/variables';
+@import "../utilities/variables";
 
 #search {
-	position: absolute;
-	top: $header-height + 18;
-	z-index: 1337;
-	background: $secondary;
+  position: absolute;
+  top: $header-height + 18;
+  z-index: 1337;
+  background: $secondary;
 
-	&:before {
-		content: "";
-		width: 1px;
-		height: 30px;
-		position: absolute;
-		background: white;
-		display: inline-block;
-		left: 0;
-		top: 0;
-	}
+  &:before {
+    content: "";
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    background: white;
+    display: inline-block;
+    left: 0;
+    top: 0;
+  }
 
-	input[type="text"] {
-		background: none;
-		border: none;
-		outline: none;
-		color: white;
-		padding-left: 20px;
-	}
+  input[type="text"] {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    padding-left: 20px;
+  }
 
-	#searchexpando {
-		background: white;
-		margin-top: 13px;
-		border-radius: 0;
-		box-shadow: $shadow;
-		border: 1px solid $secondary;
-		transition-duration: 0s;
-	}
-
+  #searchexpando {
+    background: white;
+    margin-top: 13px;
+    border-radius: 0;
+    box-shadow: $shadow;
+    border: 1px solid $secondary;
+    transition-duration: 0s;
+  }
 }
