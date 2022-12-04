@@ -1,6 +1,6 @@
 # Paragon Subreddit
 
-![version](https://img.shields.io/badge/version-2.2.0-blue)
+![version](https://img.shields.io/badge/version-2.3.0-blue)
 
 [/r/Paragon](https://old.reddit.com/r/paragon/) Subreddit CSS - 
 Managed by [/u/JejuneKai](https://www.reddit.com/user/JejuneKai)
@@ -33,7 +33,7 @@ specified in `config.example.json`.
 ### Building
 
 To compile the `.scss` to `.css` simply run `npm run build`. The `.scss` will be compiled to
-a single `theme.css` and `theme.min.css` file inside of the `build` directory.
+a single `theme.css` and `theme.min.css` file inside the `/build` directory.
 
 ### Developing
 
