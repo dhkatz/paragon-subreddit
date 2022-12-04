@@ -47,6 +47,8 @@ it is trying to load Reddit's certificate on the proxy site.
 
 ### Publishing
 
+#### Manual
+
 You can use the login information supplied inside `config.json` to automatically
 publish all changes to the specified subreddit. This includes the stylesheet and
 any images referenced inside.
@@ -57,3 +59,12 @@ When you're ready to publish, simply run `npm run publish`. This will compile th
 Please note that this process may delete unused images from the subreddit that were
 not found inside the built `theme.css`. If you wish to make a backup beforehand or
 prevent deletion entirely, please use the appropriate configuration options.
+
+#### Automated
+
+This repository uses GitHub Actions to automate stylesheet publishing. To enable this on
+your own repository, please add a `CONFIG` repository secret containing the JSON from your
+`config.json` file (just copy and paste it).
+
+Whenever a new tag is pushed to the repository, the publish workflow will automatically
+upload the stylesheet and all referenced images to the subreddit based on your configuration.
