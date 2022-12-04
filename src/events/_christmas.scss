@@ -16,16 +16,20 @@
     overflow: hidden;
     margin: 0;
   }
+
   #sr-header-area {
     z-index: 2;
   }
+
   #header-bottom-left {
     z-index: 2;
   }
+
   #header-bottom-right {
     z-index: 2;
   }
 }
+
 body {
   overflow-x: hidden !important;
 }
@@ -63,6 +67,7 @@ body {
       margin-top: -60px !important;
     }
   }
+
   .pagename a {
     margin-bottom: 3px !important;
   }

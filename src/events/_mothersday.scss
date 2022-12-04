@@ -17,16 +17,20 @@
     margin: 0;
     opacity: 0.6;
   }
+
   #sr-header-area {
     z-index: 2;
   }
+
   #header-bottom-left {
     z-index: 2;
   }
+
   #header-bottom-right {
     z-index: 2;
   }
 }
+
 body {
   overflow-x: hidden !important;
 }

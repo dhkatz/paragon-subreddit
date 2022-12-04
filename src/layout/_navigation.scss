@@ -8,6 +8,7 @@
     height: 60px;
     font-size: 12px;
     position: relative;
+
     &:before {
       content: "";
       width: 96px;
@@ -23,6 +24,7 @@
     //display: none;
     font-size: 0;
     color: $secondary;
+
     a {
       display: inline-block;
       text-indent: 100%;
@@ -61,6 +63,7 @@
       display: inline-block;
       height: 60px;
       position: relative;
+
       a {
         text-transform: uppercase;
         font-weight: normal;
@@ -70,10 +73,12 @@
         position: relative;
         padding: 24px 10px 21px;
         display: inline-block;
+
         &:hover {
           text-decoration: none;
         }
       }
+
       &:before {
         content: "";
         position: absolute;
@@ -87,15 +92,18 @@
         background-color: $highlight;
         transition: width 0.2s ease-in-out;
       }
+
       &.selected {
         a {
           color: white;
           font-weight: bold;
         }
+
         &:before {
           width: 100%;
         }
       }
+
       &:hover {
         &:before {
           width: 100%;

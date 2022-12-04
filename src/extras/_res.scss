@@ -39,11 +39,13 @@ Comments
 .comments-page {
   .comment {
     position: relative;
+
     .RES-keyNav-activeElement,
     .RES-keyNav-activeElement .md-container,
     .RES-keyNav-activeElement,
     .RES-keyNav-activeElement .md {
       background: none !important;
+
       &:after {
         content: "";
         position: absolute;
@@ -55,10 +57,12 @@ Comments
       }
     }
   }
+
   .commentarea {
     .RESSubscriptionButton {
       border: none;
       padding: 0;
+
       &:hover {
         text-decoration: underline;
       }
@@ -66,12 +70,14 @@ Comments
 
     #REScommentNavToggle {
       font-size: 14px;
+
       .commentNavSortType {
         font-size: 12px !important;
       }
     }
   }
 }
+
 .res-commentBoxes.res-commentBoxes-rounded .comment {
   border-radius: 0 !important;
   border: none !important;
@@ -93,6 +99,7 @@ Header
     margin-right: 430px;
     top: 3px;
     background: none;
+
     #RESShortcutsSort,
     #RESShortcutsRight,
     #RESShortcutsLeft,
@@ -101,6 +108,7 @@ Header
       background: none;
       opacity: 0.5;
       color: white;
+
       &:hover {
         opacity: 1;
       }

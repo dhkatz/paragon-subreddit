@@ -1,5 +1,5 @@
-@use 'sass:math';
-@use 'sass:color';
+@use "sass:math";
+@use "sass:color";
 
 // Include our lookup table
 @import "constants";
@@ -41,9 +41,9 @@ $black: #101010 !default;
 ///
 @function luminance($color) {
   // $linear-channel-values are our Lookup Table of constants
-  $red: nth($linear-channel-values, red($color) + 1);
-  $green: nth($linear-channel-values, green($color) + 1);
-  $blue: nth($linear-channel-values, blue($color) + 1);
+  $red: linear-channel-value(red($color));
+  $green: linear-channel-value(green($color));
+  $blue: linear-channel-value(blue($color));
   $calculation: 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue;
   @return $calculation;
 }

@@ -5,15 +5,19 @@
   height: 20px;
   margin: 4px 0;
   background-image: url(/assets/spritesheet.png) !important;
+
   &.up {
     background-position: 0 0;
   }
+
   &.down {
     background-position: 0 -20px;
   }
+
   &.upmod {
     background-position: -20px 0;
   }
+
   &.downmod {
     background-position: -20px -20px;
   }

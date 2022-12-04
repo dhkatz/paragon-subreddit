@@ -5,6 +5,7 @@
     margin: 30px;
     box-shadow: none;
   }
+
   .content > h1 {
     background-color: #fff;
     font-size: 20px;
@@ -14,12 +15,15 @@
     padding-top: 20px;
     padding-bottom: 18px;
   }
+
   .side .titlebox {
     margin-top: 0;
   }
+
   .formtabs-content {
     border-top: none;
     margin: auto;
+
     &:before {
       background: #f2dede;
       color: #a94442;
@@ -30,18 +34,22 @@
       padding: 10px;
     }
   }
+
   #newlink {
     & > ul {
       text-align: center;
       box-shadow: $shadow;
       visibility: hidden;
+
       li {
         visibility: visible;
       }
     }
+
     & > div.spacer {
       text-align: center;
       padding-left: 6px;
+
       & > button {
         width: 522px;
         box-shadow: 0 0.5px 2.75px 0.25px rgba(0, 0, 0, 0.2);
@@ -49,6 +57,7 @@
       }
     }
   }
+
   .tabmenu li a {
     padding-left: 117px !important;
     padding-right: 117px !important;
@@ -56,48 +65,58 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #ddd;
+
     &:hover {
       color: $primary;
     }
   }
+
   ul.tabmenu.formtab {
     padding-left: 0;
     font-size: 12px;
     margin: 15px 0 10px;
+
     li {
       &.selected a {
         background-color: $primary;
         box-shadow: -0.25px 0 2.75px 0.25px rgba(0, 0, 0, 0.2) !important;
         padding-left: 117px;
         padding-right: 117px;
+
         &:hover {
           color: white;
           background-color: lighten($primary, 10%);
         }
       }
+
       a {
         border: none;
         box-shadow: 1px 0 2.7px 0.12px rgba(0, 0, 0, 0.2);
         padding: 9px 15px;
         letter-spacing: 0;
+
         &:hover {
           text-decoration: none;
         }
       }
+
       &.selected a {
         font-size: 100%;
       }
     }
   }
+
   .infobar {
     background: #eee;
     border: 1px solid #e2e2e2;
     padding: 20px;
     box-sizing: border-box;
   }
+
   #url-field.roundfield .title {
     text-transform: uppercase;
   }
+
   .roundfield {
     background: white;
     box-shadow: $shadow;
@@ -105,10 +124,12 @@
     box-sizing: border-box;
     width: 100%;
     border-radius: 0;
+
     .usertext-edit,
     .markdownEditor-wrapper {
       width: 100%;
     }
+
     &.info-notice {
       margin: auto;
       background: white;
@@ -118,23 +139,28 @@
       font-size: 12px;
       max-width: 520px;
       border-radius: 0;
+
       &:first-letter {
         text-transform: capitalize;
       }
     }
+
     textarea,
     input {
       width: 100%;
       box-sizing: border-box;
       border: 1px solid #ccc;
+
       &[type="checkbox"] {
         width: auto;
       }
     }
   }
+
   #items-required {
     display: none;
   }
+
   #newlink-with-image-upload > div:nth-child(2) {
     margin: 15px 0;
   }

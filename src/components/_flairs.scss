@@ -50,9 +50,11 @@
   .linkflairlabel {
     background: black;
   }
+
   .thumbnail {
     background-position: 0px -100px;
   }
+
   &:before {
     color: $primary;
   }
@@ -66,6 +68,7 @@
       background: lighten(#65b354, 30%);
     }
   }
+
   &:before {
     color: #65b354;
   }
@@ -79,6 +82,7 @@
       background: lighten(black, 30%);
     }
   }
+
   &:before {
     color: black;
   }
@@ -92,9 +96,11 @@
       background: lighten(#2c95f7, 30%);
     }
   }
+
   .thumbnail {
     background-position: 0px -50px;
   }
+
   &:before {
     color: #2c95f7;
   }
@@ -108,9 +114,11 @@
       background: lighten(#a162ba, 30%);
     }
   }
+
   .thumbnail {
     background-position: 0px -150px;
   }
+
   &:before {
     color: #a162ba;
   }

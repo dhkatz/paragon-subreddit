@@ -5,31 +5,39 @@
     background: none;
     box-shadow: none;
   }
+
   .wikititle {
     display: none;
   }
+
   .pageactions {
     margin: 0 0 15px 0;
     border: none;
     border-radius: 0;
+
     .wikiaction {
       border-radius: 0;
+
       &:hover {
         text-decoration: none;
       }
     }
   }
+
   .wiki-page-content {
     margin: 0;
     background: white;
     box-shadow: $shadow;
     padding: 20px;
+
     .wiki > .toc > ul {
       border: 1px dotted #999;
     }
+
     h1:first-of-type {
       margin-top: 0;
     }
+
     .wiki.md {
       font-family: Verdana, sans-serif;
       padding-bottom: 10px;
