@@ -1,7 +1,7 @@
 const config = require("./config.json");
 const { task, src, dest, watch, series } = require("gulp");
 
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const mash = require("gulp-concat-css");
 const clean = require("gulp-clean-css");
 const replace = require("gulp-replace");
@@ -15,8 +15,6 @@ const browserSync = require("browser-sync");
 const fetch = require("node-fetch").default;
 const cheerio = require("cheerio");
 const snoowrap = require("snoowrap");
-
-sass.compiler = require("sass");
 
 task("build", () => {
   return src("src/theme.scss")
