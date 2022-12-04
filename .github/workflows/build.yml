@@ -19,6 +19,6 @@ jobs:
         uses: jsdaniell/create-json@v1.2.1
         with:
           name: 'config.json'
-          json: ${{ secrets.CONFIG }}
+          json: ${{ github.event_name != 'pull_request' && secrets.CONFIG || '{}' }}
       - name: 'Build'
         run: npm run build
