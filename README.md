@@ -51,6 +51,9 @@ You can use the login information supplied inside `config.json` to automatically
 publish all changes to the specified subreddit. This includes the stylesheet and
 any images referenced inside.
 
+When you're ready to publish, simply run `npm run publish`. This will compile the
+`.scss` to `.css` and then upload the stylesheet and any referenced images to the subreddit.
+
 Please note that this process may delete unused images from the subreddit that were
 not found inside the built `theme.css`. If you wish to make a backup beforehand or
 prevent deletion entirely, please use the appropriate configuration options.
