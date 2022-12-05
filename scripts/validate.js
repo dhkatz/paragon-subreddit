@@ -1,16 +1,16 @@
-const css = require("css-tree");
+const csstree = require("css-tree");
 
 const N_ = (s) => s;
 
 const SIMPLE_TOKEN_TYPES = [
-  "dimension",
-  "hash",
-  "ident",
+  "Dimension",
+  "Hash",
+  "Identifier",
   "literal",
-  "number",
-  "percentage",
-  "string",
-  "whitespace",
+  "Number",
+  "Percentage",
+  "String",
+  "Selector",
 ];
 
 const VENDOR_PREFIXES = [
@@ -328,18 +328,18 @@ console.assert(SAFE_FUNCTIONS.every((f) => f === f.toLowerCase()));
  * @constant
  */
 const ERROR_MESSAGES = {
-  IMAGE_NOT_FOUND: N_('no image found with name "%(name)s"'),
+  IMAGE_NOT_FOUND: N_('no image found with name "{name}"'),
   NON_PLACEHOLDER_URL: N_(
-    "only uploaded images are allowed; reference them with the %%%%imagename%%%% system"
+    "only uploaded images are allowed; reference them with the %%name%% system"
   ),
-  SYNTAX_ERROR: N_("syntax error: %(message)s"),
-  UNKNOWN_AT_RULE: N_("@%(keyword)s is not allowed"),
-  UNKNOWN_PROPERTY: N_('unknown property "%(name)s"'),
-  UNKNOWN_FUNCTION: N_('unknown function "%(function)s"'),
-  UNEXPECTED_TOKEN: N_('unexpected token "%(token)s"'),
+  SYNTAX_ERROR: N_("syntax error: {message}"),
+  UNKNOWN_AT_RULE: N_("@{name} is not allowed"),
+  UNKNOWN_PROPERTY: N_('unknown property "{name}"'),
+  UNKNOWN_FUNCTION: N_('unknown function "{name}"'),
+  UNEXPECTED_TOKEN: N_('unexpected token "{token}"'),
   BACKSLASH: N_("backslashes are not allowed"),
   CONTROL_CHARACTER: N_("control characters are not allowed"),
-  TOO_BIG: N_("the stylesheet is too big. maximum size: %(size)d KiB"),
+  TOO_BIG: N_("the stylesheet is too big. maximum size: {size} KiB"),
 };
 
 const MAX_SIZE_KIB = 100;
@@ -360,8 +360,16 @@ function strip_vendor_prefix(identifier) {
 }
 
 class ValidationError extends Error {
-  constructor(message) {
-    super(message);
+  constructor(message, params) {
+    super(
+      message.replace(/{([^}]+)}/g, (match, name) => {
+        if (name in params) {
+          return params[name];
+        }
+
+        return match;
+      })
+    );
   }
 }
 
@@ -373,75 +381,129 @@ class StylesheetValidator {
   /**
    * Validates that a CSS url contains only a valid image in the %name% format.
    */
-  validate_url(url_node) {
+  *validate_url(url_node) {
     if (this.skip_images) return;
 
     const match = url_node.value.match(SUBREDDIT_IMAGE_URL_PLACEHOLDER);
     if (!match) {
-      return new ValidationError(ERROR_MESSAGES.NON_PLACEHOLDER_URL);
+      yield new ValidationError(ERROR_MESSAGES.NON_PLACEHOLDER_URL, {});
     }
-
-    // We don't need to check if the image exists here, because we
-    // handle images in the build and publish steps.
-    // const name = match[1];
-    // if (!this.images.has(name)) {
-    //   return new ValidationError(ERROR_MESSAGES.IMAGE_NOT_FOUND, { name });
-    // }
   }
 
-  validate_function(function_node) {}
+  *validate_function(function_node) {
+    const name = strip_vendor_prefix(function_node.name.toLowerCase());
 
-  validate_declaration(declaration_node) {
+    if (!SAFE_FUNCTIONS.includes(name)) {
+      yield new ValidationError(ERROR_MESSAGES.UNKNOWN_FUNCTION, {
+        name: function_node.name,
+      });
+    } else if (name === "attr") {
+      // noinspection JSMismatchedCollectionQueryUpdate
+      const errors = [];
+      csstree.walk(function_node, (node) => {
+        if (node.type === "Identifier" && node.name === "url") {
+          errors.push(new ValidationError(ERROR_MESSAGES.NON_PLACEHOLDER_URL));
+        }
+      });
+
+      yield* errors;
+    }
+
+    yield* this.validate_components(function_node);
+  }
+
+  *validate_block(block_node) {
+    yield* this.validate_components(block_node);
+  }
+
+  validate_prelude = (prelude_node) => {
+    return this.validate_components(prelude_node);
+  };
+
+  *validate_components(components) {
+    if (components.type === "Raw") {
+      yield new ValidationError(ERROR_MESSAGES.SYNTAX_ERROR, {
+        message: components.value,
+      });
+      return;
+    }
+
+    yield* this.validate_list(components.children, {
+      Block: this.validate_block.bind(this),
+      Url: this.validate_url.bind(this),
+      Function: this.validate_function.bind(this),
+      Declaration: this.validate_declaration.bind(this),
+    });
+  }
+
+  *validate_declaration(declaration_node) {
     const property = strip_vendor_prefix(
       declaration_node.property.toLowerCase()
     );
+
     if (!SAFE_PROPERTIES.includes(property)) {
-      return new ValidationError(ERROR_MESSAGES.UNKNOWN_PROPERTY, {
+      yield new ValidationError(ERROR_MESSAGES.UNKNOWN_PROPERTY, {
         name: declaration_node.property,
       });
     }
+
+    yield* this.validate_components(declaration_node.value);
   }
 
-  validate_qualified_rule() {}
+  *validate_rule(rule_node) {
+    yield* this.validate_prelude(rule_node.prelude);
+    yield* this.validate_block(rule_node.block);
+  }
 
-  validate_atrule(atrule_node) {
+  *validate_atrule(atrule_node) {
     const keyword = strip_vendor_prefix(atrule_node.name.toLowerCase());
 
     if (["media", "keyframes"].includes(keyword)) {
-      // TODO: validate media queries
+      yield* this.validate_list(atrule_node.block.children, {
+        Rule: this.validate_rule.bind(this),
+      });
     } else if (keyword === "page") {
-      // TODO: Validate qualified rules
+      yield* this.validate_list(atrule_node.block.children, {
+        Declaration: this.validate_declaration.bind(this),
+      });
     } else {
-      return new ValidationError(ERROR_MESSAGES.UNKNOWN_AT_RULE, {
-        keyword: atrule_node.name,
+      yield new ValidationError(ERROR_MESSAGES.UNKNOWN_AT_RULE, {
+        name: atrule_node.name,
       });
     }
   }
 
-  validate_rule_list(rules) {
-    return this.validate_list(rules, {});
+  *validate_stylesheet(stylesheet) {
+    stylesheet = csstree.toPlainObject(stylesheet);
+
+    yield* this.validate_list(stylesheet.children, {
+      Rule: this.validate_rule.bind(this),
+      Atrule: this.validate_atrule.bind(this),
+    });
   }
 
-  validate_list(nodes, validators_by_type, ignored_types = null) {
-    const errors = [];
-
-    css.walk(nodes, (node) => {
-      const type = node.type.toLowerCase();
-      if (type === "raw") {
-        errors.push(
-          new ValidationError(ERROR_MESSAGES.SYNTAX_ERROR, {
-            value: node.value,
-          })
-        );
-      } else if (typeof this[`validate_${type}`] === "function") {
-        const error = this[`validate_${type}`](node);
-        if (error) {
-          errors.push(error);
-        }
+  *validate_list(
+    nodes,
+    validators_by_type,
+    ignored_types = SIMPLE_TOKEN_TYPES
+  ) {
+    for (const node of nodes) {
+      if (node.type === "Raw") {
+        yield new ValidationError(ERROR_MESSAGES.SYNTAX_ERROR, {
+          value: node.value,
+        });
       }
-    });
 
-    return errors;
+      const validator = validators_by_type[node.type];
+
+      if (validator) {
+        yield* validator(node);
+      } else if (!ignored_types || !ignored_types.includes(node.type)) {
+        yield new ValidationError(ERROR_MESSAGES.UNEXPECTED_TOKEN, {
+          token: node.type,
+        });
+      }
+    }
   }
 
   /**
@@ -460,7 +522,6 @@ class StylesheetValidator {
           break;
           // accept these characters that get classified as control
         } else if (["\t", "\n", "\r"].includes(codepoint)) {
-          continue;
           // Safari: *{font-family:'foobar\x03;background:url(evil);';}
         } else if (codepoint <= "\u001F" || codepoint === "\u007F") {
           errors.push(
@@ -484,12 +545,14 @@ class StylesheetValidator {
       throw new ValidationError(ERROR_MESSAGES.TOO_BIG, { size: MAX_SIZE_KIB });
     }
 
-    const ast = css.parse(stylesheet, {});
+    const ast = csstree.parse(stylesheet, {
+      positions: true,
+    });
 
     const backslash_errors = this.check_for_evil_codepoints(
       stylesheet.split("\n")
     );
-    const validation_errors = this.validate_rule_list(ast);
+    const validation_errors = this.validate_stylesheet(ast);
 
     const errors = [...backslash_errors, ...validation_errors];
 
@@ -512,7 +575,5 @@ function validate_css(stylesheet, skip_images = false) {
 
   return validator.parse_and_validate(stylesheet);
 }
-
-// validate_css("@import 'foobar'; *{}");
 
 module.exports = validate_css;
