@@ -11,6 +11,7 @@ const SIMPLE_TOKEN_TYPES = [
   "Percentage",
   "String",
   "Selector",
+  "Operator",
 ];
 
 const VENDOR_PREFIXES = [
