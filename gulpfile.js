@@ -6,6 +6,7 @@ const mash = require("gulp-concat-css");
 const clean = require("gulp-clean-css");
 const replace = require("gulp-replace");
 const autoprefixer = require("gulp-autoprefixer");
+const each = require("gulp-each");
 
 const fs = require("fs");
 const util = require("util");
@@ -16,6 +17,8 @@ const fetch = require("node-fetch").default;
 const cheerio = require("cheerio");
 const snoowrap = require("snoowrap");
 
+const validate_css = require("./scripts/validate");
+
 task("build", () => {
   return src("src/theme.scss")
     .pipe(sass())
@@ -25,8 +28,20 @@ task("build", () => {
     .pipe(dest("./build"))
     .pipe(mash("theme.min.css"))
     .pipe(clean({ level: { 2: { all: true } } }))
+    .pipe(
+      each((content, file, callback) => {
+        const { errors } = validate_css(content.toString());
+
+        callback(errors.length > 0 ? errors : null, content);
+      })
+    )
     .pipe(dest("./build"));
 });
+
+task(
+  "validate",
+  series(task("build"), async () => {})
+);
 
 task("serve:scss", () => {
   return src("src/theme.scss")
@@ -45,7 +60,7 @@ task(
   "serve",
   series(task("serve:scss"), async () => {
     const url = `https://old.reddit.com/r/${config.options.subreddit}`;
-    const res = await fetch(url);
+    const res = await fetch(url, { method: "GET" });
     const body = await res.text();
     const $ = cheerio.load(body);
     const stylesheet = $("link[title=applied_subreddit_stylesheet]").attr(
@@ -98,7 +113,7 @@ task(
 
       await Promise.all(
         data.images.map(async ({ name, url }) => {
-          const res = await fetch(url);
+          const res = await fetch(url, { method: "GET" });
           const data = await res.arrayBuffer();
 
           await writeFile(
