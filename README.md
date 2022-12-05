@@ -1,12 +1,15 @@
-# Paragon Subreddit
+# Paragon Subreddit ![version](https://img.shields.io/badge/version-2.3.0-blue)
 
-![version](https://img.shields.io/badge/version-2.3.0-blue) [![Build](https://github.com/dhkatz/paragon-subreddit/actions/workflows/build.yml/badge.svg)](https://github.com/dhkatz/paragon-subreddit/actions/workflows/build.yml)
+[![Build](https://github.com/dhkatz/paragon-subreddit/actions/workflows/build.yml/badge.svg)](https://github.com/dhkatz/paragon-subreddit/actions/workflows/build.yml)
+[![Test](https://github.com/dhkatz/paragon-subreddit/actions/workflows/test.yml/badge.svg)](https://github.com/dhkatz/paragon-subreddit/actions/workflows/test.yml)
 
 [/r/Paragon](https://old.reddit.com/r/paragon/) Subreddit CSS - 
 Managed by [/u/JejuneKai](https://www.reddit.com/user/JejuneKai)
 and [/u/MCiLuZiioNz](https://www.reddit.com/user/mciluziionz)
 
 ## Features
+
+**SCSS Features**
 
 * Header image
 * User flair
@@ -16,6 +19,13 @@ and [/u/MCiLuZiioNz](https://www.reddit.com/user/mciluziionz)
 * Emotes
 * Event and holiday themes
 * and so much more!
+
+**Development Features**
+
+* BrowserSync for live reloading
+* Sass for CSS preprocessing
+* Automatic [CSS validation](./scripts/validate.js) against Reddit's CSS validator
+* Automated builds and publishing using GitHub Actions
 
 ## Development
 
