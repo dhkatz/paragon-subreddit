@@ -366,14 +366,16 @@ class ValidationError extends Error {
 }
 
 class StylesheetValidator {
-  constructor(images) {
-    this.images = images;
+  constructor(skip_images) {
+    this.skip_images = skip_images;
   }
 
   /**
    * Validates that a CSS url contains only a valid image in the %name% format.
    */
   validate_url(url_node) {
+    if (this.skip_images) return;
+
     const match = url_node.value.match(SUBREDDIT_IMAGE_URL_PLACEHOLDER);
     if (!match) {
       return new ValidationError(ERROR_MESSAGES.NON_PLACEHOLDER_URL);
@@ -501,12 +503,12 @@ class StylesheetValidator {
 /**
  *
  * @param {string} stylesheet
- * @param {string[]?} images
+ * @param {boolean} skip_images
  * @returns {{serialized: string, errors: ValidationError[]}}
  */
 
-function validate_css(stylesheet, images) {
-  const validator = new StylesheetValidator(images);
+function validate_css(stylesheet, skip_images = false) {
+  const validator = new StylesheetValidator(skip_images);
 
   return validator.parse_and_validate(stylesheet);
 }

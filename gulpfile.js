@@ -52,6 +52,13 @@ task("serve:scss", () => {
     .pipe(dest("./assets/css"))
     .pipe(mash("theme.min.css"))
     .pipe(clean({ level: { 2: { all: true } } }))
+    .pipe(
+      each((content, file, callback) => {
+        const { errors } = validate_css(content.toString(), true);
+
+        callback(errors.length > 0 ? errors : null, content);
+      })
+    )
     .pipe(dest("./assets/css"))
     .pipe(browserSync.stream());
 });
