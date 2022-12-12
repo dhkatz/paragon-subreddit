@@ -19,7 +19,7 @@ jobs:
       - name: 'Install'
         run: npm ci
       - name: 'Configure'
-        uses: jsdaniell/create-json@v1.2.1
+        uses: jsdaniell/create-json@v1.2.2
         with:
           name: 'config.json'
           json: ${{ secrets.CONFIG }}
