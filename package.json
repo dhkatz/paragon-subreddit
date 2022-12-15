@@ -9,7 +9,7 @@
     "browser-sync": "^2.27.10",
     "cheerio": "^1.0.0-rc.12",
     "css": "^3.0.0",
-    "css-tree": "^2.3.0",
+    "css-tree": "^2.3.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
