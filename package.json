@@ -6,7 +6,7 @@
   "description": "/r/Paragon Subreddit CSS - Managed by /u/JejuneKai and /u/MCiLuZiioNz",
   "devDependencies": {
     "@types/jest": "^29.2.6",
-    "browser-sync": "^2.27.11",
+    "browser-sync": "^2.29.0",
     "cheerio": "^1.0.0-rc.12",
     "css": "^3.0.0",
     "css-tree": "^2.3.1",
