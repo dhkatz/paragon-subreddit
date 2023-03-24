@@ -21,7 +21,7 @@
     "jest": "^29.3.1",
     "node-fetch": "^2.6.9",
     "prettier": "^2.8.3",
-    "sass": "^1.57.1",
+    "sass": "^1.60.0",
     "snoowrap": "^1.23.0"
   },
   "scripts": {
