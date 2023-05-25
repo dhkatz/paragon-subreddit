@@ -1,4 +1,4 @@
-# Paragon Subreddit ![version](https://img.shields.io/badge/version-2.3.0-blue)
+# Paragon Subreddit ![version](https://img.shields.io/badge/version-2.3.1-blue)
 
 [![Build](https://github.com/dhkatz/paragon-subreddit/actions/workflows/build.yml/badge.svg)](https://github.com/dhkatz/paragon-subreddit/actions/workflows/build.yml)
 [![Test](https://github.com/dhkatz/paragon-subreddit/actions/workflows/test.yml/badge.svg)](https://github.com/dhkatz/paragon-subreddit/actions/workflows/test.yml)
