@@ -16,7 +16,7 @@ jobs:
       - name: 'Install'
         run: npm ci
       - name: 'Configure'
-        uses: jsdaniell/create-json@v1.2.2
+        uses: jsdaniell/create-json@v1.2.3
         with:
           name: 'config.json'
           json: ${{ github.event_name != 'pull_request' && secrets.CONFIG || '{}' }}
